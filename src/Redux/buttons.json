@@ -1,0 +1,19 @@
+{
+    "buttons":[{
+            "id":"buttonAnimation1",
+            "key":"1",
+            "styleCss":"#buttonAnimation1{font-size: 1.25em;color: #000;background-color: #1197cc;box-shadow: #094c66 4px 4px 0px;border-radius: 0.5rem;transition: transform 200ms, box-shadow 200ms;cursor: pointer;text-align: center;outline:none;border: none;height: 2.8125rem;margin: 1px 3px;padding: 0.652rem 1.25rem;}#buttonAnimation1:active{transform: translateY(4px) translateX(4px);box-shadow: #094c66 0px 0px 0px;}",
+            "model":"3d"
+        },{
+            "id":"buttonAnimation2",
+            "key":"2",
+            "styleCss":"#buttonAnimation2{font-size: 1em;padding: 0.8rem;background:transparent;color: #2e2e2e;border: none;border-radius: 50%;box-shadow: 5px 5px 10px -3px #0000047f, -5px -5px 15px 3px #ffffff89;cursor:pointer;}#buttonAnimation2:active {box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;}",
+            "model":"minimalist"
+        },{
+            "id":"buttonAnimation3",
+            "key":"3",
+            "styleCss":"#buttonAnimation3{padding:0.8rem 1.5rem;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:10px;background:#111827;cursor:pointer;color:white;}#buttonAnimation3::after{content:'';height:calc(100% + 10px);width:calc(100% + 10px);position:absolute;top:-5px;left:-5px;z-index:-1;border-radius:10px;background:linear-gradient(90deg,deeppink,deepskyblue,lawngreen,deeppink);background-size:300% 100%;animation: animate 3s ease infinite;}@keyframes animate{to{background-position:0% 0%;}50%{background-position:90% 0%;}100%{background-position:0% 0%;}}",
+            "model":"2d"
+        }
+    ]
+}

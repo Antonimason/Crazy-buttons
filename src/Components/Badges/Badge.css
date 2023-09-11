@@ -1,0 +1,33 @@
+.badge-container{
+    width: 7rem;
+    height: 10rem;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.badge-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.badge-button{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    outline: none;
+    border: 1px solid #ffd819; 
+}
+
+.badge-button:hover{
+    background: #ffd819;
+    color: #ffffff;
+}
