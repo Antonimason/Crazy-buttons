@@ -6,6 +6,7 @@ export const builtButton = createSlice({
         list:{
             width:"35px",
             height:"20px",
+            padding: "10px"
         }, //a list which it will be changed
     },
     reducers:{
@@ -15,8 +16,11 @@ export const builtButton = createSlice({
         hValue: (state,action) =>  {
             state.list.height = `${action.payload}px`;
         },
+        pValue: (state,action) =>  {
+            state.list.height = `${action.payload}px`;
+        }
     },
 });
-export const {wValue,hValue} = builtButton.actions;
+export const {wValue,hValue,pValue} = builtButton.actions;
 
 export default builtButton.reducer;
