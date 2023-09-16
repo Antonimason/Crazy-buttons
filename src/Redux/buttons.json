@@ -14,6 +14,12 @@
             "key":"3",
             "styleCss":"#buttonAnimation3{padding:0.8rem 1.5rem;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:10px;background:#111827;cursor:pointer;color:white;}#buttonAnimation3::after{content:'';height:calc(100% + 10px);width:calc(100% + 10px);position:absolute;top:-5px;left:-5px;z-index:-1;border-radius:10px;background:linear-gradient(90deg,deeppink,deepskyblue,lawngreen,deeppink);background-size:300% 100%;animation: animate 3s ease infinite;}@keyframes animate{to{background-position:0% 0%;}50%{background-position:90% 0%;}100%{background-position:0% 0%;}}",
             "model":"2d"
+        },
+        {
+            "id":"buttonAnimation4",
+            "key":"4",
+            "styleCss":"#buttonAnimation4{padding: 0.8rem;background-color:white;border-radius:0.25rem;border:0.125rem solid #121212;box-shadow: 0.25rem 0.25rem #121212;transition: 50ms, box-shadow 50ms;&&:active{transform:translate(0.125rem, 0.125rem);box-shadow: 0.125rem 0.125rem #121212}",
+            "model":"3d"
         }
     ]
 }

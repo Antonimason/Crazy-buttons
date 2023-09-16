@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { valor } from '../Redux/buttonSelection';
-import '../App';
+import './YourButton.css';
 import Badge from '../Components/Badges/Badge';
 import CreateButton from '../Components/Buttons/CreateButton';
 import buttonList from '../Redux/buttons.json';
 
-function App() {
+function YourButton() {
 
   // Showing up the data
   const dispatch = useDispatch();
@@ -57,18 +57,18 @@ function App() {
 }
 
   return (
-    <div className="App">
-      <div className="butons">
+    <div className="button">
+      <div className="butons__Selection">
       <button onClick={()=>ShowButtons("all")}>all</button>
       <button onClick={()=>ShowButtons("minimalist")}>minimalist</button>
       <button onClick={()=>ShowButtons("2d")}>2d</button>
       <button onClick={()=>ShowButtons("3d")}>3d</button>
       </div>
-      <div>
+      <div className="buttons__show">
         {modifyList}
       </div>
     </div>
   );
 }
 
-export default App;
+export default YourButton;
