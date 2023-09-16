@@ -58,11 +58,11 @@ function YourButton() {
 
   return (
     <div className="button">
-      <div className="butons__Selection">
-      <button onClick={()=>ShowButtons("all")}>all</button>
-      <button onClick={()=>ShowButtons("minimalist")}>minimalist</button>
-      <button onClick={()=>ShowButtons("2d")}>2d</button>
-      <button onClick={()=>ShowButtons("3d")}>3d</button>
+      <div className="buttons__selection">
+      <button className="select__button" onClick={()=>ShowButtons("all")}>All</button>
+      <button className="select__button" onClick={()=>ShowButtons("minimalist")}>Minimalist</button>
+      <button className="select__button" onClick={()=>ShowButtons("2d")}>2D</button>
+      <button className="select__button" onClick={()=>ShowButtons("3d")}>3D</button>
       </div>
       <div className="buttons__show">
         {modifyList}
