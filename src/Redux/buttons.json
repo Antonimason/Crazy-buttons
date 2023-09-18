@@ -27,19 +27,25 @@
             "id":"buttonAnimation5",
             "key":"5",
             "styleCss":"#buttonAnimation5{background-color:#000000; color:#f26f2e;border:2px solid;transition:0.7s  ease-in-out;width:60px;font-size:1em;height:30px;cursor:pointer;position:relative; &&:hover{color:#ffffff;border-color:#e6fc6a;box-shadow:0 0.8em 0.5em -0.4em #e6fc6a;transform:translateY(-0.35em);}}",
-            "model":"2d"
+            "model":"hover"
         },
         {
             "id":"buttonAnimation6",
             "key":"6",
             "styleCss":"#buttonAnimation6{width:80px;height:30px;font-size:1.1em;cursor:pointer;background-color:#171717;color:#ffffff;border:none;transition:all .4s; &&:hover{border-radius:5px;transform:translateY(-10px);box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db, 0 16px 10px -3px #39a2db}}",
-            "model":"2d"
+            "model":"hover"
         },
         {
             "id":"buttonAnimation7",
             "key":"7",
-            "styleCss":"#buttonAnimation7{background:none;border:1px solid #7864f4;color:7864f4;padding:10px;cursor:pointer;outline:none;position:relative;animation:all 1s;overflow:hidden;border-radius:10px;font-weight:bold;&&:before{content: '';position:absolute;top:0;left:0;background: linear-gradient(#7864f4,#3072d3);width:100%;transition:all 0.3s;z-index: -1;transform:rotate(-90deg);transform-origin:bottom left;height:100%;}&&:hover{color:#fff}&&:hover:before{transform:rotate(0);}}",
-            "model":"2d"
+            "styleCss":"#buttonAnimation7{background:none;border:1px solid #7864f4;color:7864f4;padding:12px 20px;cursor:pointer;outline:none;position:relative;animation:all 1s;overflow:hidden;border-radius:10px;font-weight:bold;&&:before{content: '';position:absolute;top:0;left:0;background: linear-gradient(#7864f4,#3072d3);width:100%;transition:all 0.3s;z-index: -1;transform:rotate(-90deg);transform-origin:bottom left;height:100%;}&&:hover{color:#fff}&&:hover:before{transform:rotate(0);}}",
+            "model":"hover"
+        },
+        {
+            "id":"buttonAnimation8",
+            "key":"8",
+            "styleCss":"#buttonAnimation8{padding:15px 17px;background-color:#050801;color:#03e9f4;font-weight:bold;border:none;border-radius:5px;letter-spacing:4px;overflow:hidden;transition:0.5s;cursor:pointer;&&:hover{background-color:#03e9f4;color:#050801;box-shadow:0 0 5px #03e9f4, 0 0 25px #03e9f4; 0 0 50px #03e9f4, 0 0 100px #03e9f4;-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);}}",
+            "model":"hover"
         }
     ]
 }

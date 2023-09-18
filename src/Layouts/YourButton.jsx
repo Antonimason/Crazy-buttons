@@ -50,7 +50,13 @@ function YourButton() {
           return button3d});
           dispatch(valor(button3d));
           break;
-
+      case "hover":
+        let buttonHover = [];
+          lista.buttons.map(item=>{
+            if(item.model === 'hover') return buttonHover.push(item)
+          return buttonHover});
+          dispatch(valor(buttonHover));
+          break;
       default: console.log("press a button");
     }
     return console.log("it works")
@@ -63,6 +69,7 @@ function YourButton() {
       <button className="select__button" onClick={()=>ShowButtons("minimalist")}>Minimalist</button>
       <button className="select__button" onClick={()=>ShowButtons("2d")}>2D</button>
       <button className="select__button" onClick={()=>ShowButtons("3d")}>3D</button>
+      <button className="select__button" onClick={()=>ShowButtons("hover")}>Hover</button>
       </div>
       <div className="buttons__show">
         {modifyList}
