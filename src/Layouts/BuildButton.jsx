@@ -1,22 +1,32 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { wValue, hValue, pValue } from '../Redux/builtButton'
+import { pYValue, pXValue, nameButton,fontsize } from '../Redux/builtButton'
 function BuildButton () {
 
     const dispatch = useDispatch();
     const list = useSelector(state=> state.zise.list)
-
-    const obj = {
-
-    }
     return (
         <div className="buildbutton">
-
-            <input type="range" min={35} max={200} onChange={(e) =>{dispatch(wValue(e.target.value))}}></input>
-            <input type="range" min={20} max={100} onChange={(e) =>{dispatch(hValue(e.target.value))}}></input>
-            <input type="range" min={5} max={40} onChange={(e) =>{dispatch(pValue(e.target.value))}}></input>
             <div>
-                <button style={{width: list.width, height: list.height, padding: list.padding}}>Click</button>
+                <label>Button Text
+                <input name="buttontext" type="text" onChange={(e) =>{dispatch(nameButton(e.target.value))}}/></label>
+            </div>
+            <div>
+                <label>Font-Size
+                <input name="fontsize" type="number" min='10' max='50' onChange={(e) =>{dispatch(fontsize(e.target.value))}}/></label>
+            </div>
+            <div>
+                <label>Padding Vetical
+                <input name="padding" type="number" min='0' max='40'  onChange={(e) =>{dispatch(pYValue(e.target.value))}}/></label>
+                <label>Padding Horizontal
+                <input name="padding" type="number" min='0' max='40'  onChange={(e) =>{dispatch(pXValue(e.target.value))}}/></label>
+            </div>
+            <div>
+                <button className="hola" 
+                    style={{fontSize: list.size, 
+                            width: list.width, 
+                            height: list.height, 
+                            padding: list.padding.join(" ")}}>{list.name}</button>
             </div>
         </div>
     )
