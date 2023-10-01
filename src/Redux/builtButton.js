@@ -5,6 +5,7 @@ export const builtButton = createSlice({
     initialState: {
         list:{
             name:"Click",
+            family: "Open Sans",
             size:"10px",
             padding:["0px","0px"],
         }, //a list which it will be changed
@@ -12,6 +13,9 @@ export const builtButton = createSlice({
     reducers:{
         nameButton: (state,action) => {
             state.list.name = action.payload;
+        },
+        fontfamily: (state,action) => {
+            state.list.family = action.payload;
         },
         fontsize: (state,action) => {
             state.list.size = `${action.payload}px`;
@@ -24,6 +28,6 @@ export const builtButton = createSlice({
         }
     },
 });
-export const {pYValue,pXValue,nameButton,fontsize} = builtButton.actions;
+export const {pYValue,pXValue,nameButton,fontsize,fontfamily} = builtButton.actions;
 
 export default builtButton.reducer;

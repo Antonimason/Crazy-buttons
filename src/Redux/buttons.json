@@ -52,6 +52,12 @@
             "key":"9",
             "styleCss":"#buttonAnimation9{cursor:pointer;background:transparent;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);margin:0 auto;border:none;font-size:18px;padding:10px 25px;color:#000;} #buttonAnimation9::before, #buttonAnimation9::after{content:'';width:100%;height:100%;position:absolute;top:0;left:0;box-sizing:border-box;transition: top 0.5s, left 0.5s}#buttonAnimation9::before{border-left:2px solid #f4005c;border-top:2px solid #f4005c;}#buttonAnimation9::after{border-right:2px solid #f4005c;border-bottom:2px solid #f4005c;}#buttonAnimation9:hover::before{top:-4px;left:-10px}#buttonAnimation9:hover::after{top:4px;left:10px}",
             "model":"hover"
+        },
+        {
+            "id":"buttonAnimation10",
+            "key":"10",
+            "styleCss":"#buttonAnimation10{position:relative;width:100px;height:40px;font-size:1.2em;border:none;outline:none;background:#fff;text-transform:uppercase;letter-spacing:2px;cursor:pointer;}#buttonAnimation10::before,#buttonAnimation10::after{content:'';position:absolute;width:20px;height:20px;border:2px solid #121212;border-top:transparent;transition:.4s;border-right:transparent;box-sizing:border-box}#buttonAnimation10::before{bottom:0;left:0;}#buttonAnimation10::after{top:0;right:0;transform:rotate(180deg);}#buttonAnimation10:hover::before,#buttonAnimation10:hover::after{width:100%;height:100%;}",
+            "model":"hover"
         }
     ]
 }
