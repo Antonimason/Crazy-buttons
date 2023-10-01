@@ -13,7 +13,11 @@ function Badge(props){
                 <div className='badge-image'>
                     {props.button}
                 </div>
-                <button className='badge-button' onClick={(e)=>{dispatch(copy(props.button.props.stylefix));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},5000)}}>Copy</button>
+
+                <div className='badge-buttons'>
+                    <button className='badge-button' onClick={(e)=>{dispatch(copy(props.button.props.stylefix));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},5000)}}>Copy</button>
+                </div>
+                
             </div>
         </>
     )

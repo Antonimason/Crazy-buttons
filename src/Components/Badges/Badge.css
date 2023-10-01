@@ -15,8 +15,14 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    position:relative;
+    height: 70px;
 }
-
+.badge-buttons{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
 .badge-button{
     padding: 0.5rem;
     border-radius: 0.5rem;
