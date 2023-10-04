@@ -8,6 +8,10 @@ export const builtButton = createSlice({
             family: "Open Sans",
             size:"10px",
             padding:["0px","0px"],
+            color:"black",
+            background:"white",
+            radius:"none",
+            bold:"normal",
         }, //a list which it will be changed
     },
     reducers:{
@@ -25,9 +29,21 @@ export const builtButton = createSlice({
         },
         pYValue: (state,action) =>  {
             state.list.padding[0] = `${action.payload}px`;
+        },
+        fontcolor: (state,action) => {
+            state.list.color = action.payload;
+        },
+        bgcolor: (state,action) => {
+            state.list.background = action.payload;
+        },
+        rad: (state,action) => {
+            state.list.radius = `${action.payload}px`;
+        },
+        isBold: (state,action) => {
+            state.list.bold = action.payload;
         }
     },
 });
-export const {pYValue,pXValue,nameButton,fontsize,fontfamily} = builtButton.actions;
+export const {pYValue,pXValue,nameButton,fontsize,fontfamily,fontcolor,bgcolor,rad,isBold} = builtButton.actions;
 
 export default builtButton.reducer;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { pYValue, pXValue, nameButton,fontsize,fontfamily } from '../Redux/builtButton'
+import { pYValue, pXValue, nameButton,fontsize,fontfamily,fontcolor,bgcolor,rad,isBold } from '../Redux/builtButton'
 function BuildButton () {
 
     const dispatch = useDispatch();
@@ -21,6 +21,10 @@ function BuildButton () {
                 </select></label>
 
                 <label>Font-Size<input name="fontsize" type="number" min='10' max='50' onChange={(e) =>{dispatch(fontsize(e.target.value))}}/></label>
+                <label>Color<input type="color" onChange={(e)=>{dispatch(fontcolor(e.target.value))}}/></label>
+                <label>Background Color<input type="color" onChange={(e)=>{dispatch(bgcolor(e.target.value))}}/></label>
+                <label>Corner Radius<input type="number" min="0" max="50" onChange={(e)=>{dispatch(rad(e.target.value))}}/></label>
+                <label>Bold?<input type="checkbox" onChange={(e)=>{dispatch(fontcolor(e.target.value))}}/></label>
             </div>
             <div>
                 <label>Vertical sizing
@@ -34,7 +38,11 @@ function BuildButton () {
                             fontFamily: list.family, 
                             width: list.width, 
                             height: list.height, 
-                            padding: list.padding.join(" ")}}>{list.name}</button>
+                            padding: list.padding.join(" "),
+                            color:list.color,
+                            backgroundColor:list.background,
+                            borderRadius:list.radius,
+                            fontWeight:list.bold}}>{list.name}</button>
             </div>
         </div>
     )
