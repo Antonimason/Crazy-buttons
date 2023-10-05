@@ -6,12 +6,16 @@ export const builtButton = createSlice({
         list:{
             name:"Click",
             family: "Open Sans",
-            size:"10px",
+            size:"25px",
             padding:["0px","0px"],
             color:"black",
-            background:"white",
+            background:"lightblue",
             radius:"none",
             bold:"normal",
+            italic:"normal",
+            onOffBorder: false,
+            borderColor: "black",
+            borderSize: "none"
         }, //a list which it will be changed
     },
     reducers:{
@@ -40,10 +44,22 @@ export const builtButton = createSlice({
             state.list.radius = `${action.payload}px`;
         },
         isBold: (state,action) => {
-            state.list.bold = action.payload;
+            action.payload === true ? state.list.bold = "bold" : state.list.bold = "normal";
+        },
+        isItalic: (state,action) => {
+            action.payload === true ? state.list.italic = "italic" : state.list.italic = "normal";
+        },
+        isBorder: (state,action) => {
+            action.payload === true ? state.list.onOffBorder = true : state.list.onOffBorder = false; state.list.borderSize="none";
+        },
+        borderColor: (state,action) => {
+            state.list.borderColor = action.payload;
+        },
+        borderSize: (state,action) => {
+            state.list.borderSize = `${action.payload}px solid`;
         }
     },
 });
-export const {pYValue,pXValue,nameButton,fontsize,fontfamily,fontcolor,bgcolor,rad,isBold} = builtButton.actions;
+export const {pYValue,pXValue,nameButton,fontsize,fontfamily,fontcolor,bgcolor,rad,isBold,isItalic,isBorder,borderColor,borderSize} = builtButton.actions;
 
 export default builtButton.reducer;
