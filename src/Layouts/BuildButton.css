@@ -1,0 +1,70 @@
+.buildbutton{
+    width:100%;
+    margin:0 auto;
+    padding: 0.5rem 0.3rem 2rem 0.3rem;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+}
+.title{
+    align-self: flex-start;
+}
+.buildbutton__text{
+    padding:0.625rem;
+    width: 100%;
+    display:flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.text__inline{
+    width:100%;
+    display: flex;
+    gap: 10px;
+}
+
+.buttonbuild__sizing{
+    width: 100%;
+    padding:0.625rem;
+    display:flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.buildbutton__colour{
+    width: 100%;
+    padding:0.625rem;
+    display:flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.buildbutton__extras{
+    width: 100%;
+    padding:0.625rem;
+    display:flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.myButton{
+    width: 100%;
+    padding:2rem;
+    display:flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

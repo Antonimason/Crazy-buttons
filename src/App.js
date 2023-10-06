@@ -2,6 +2,7 @@ import React from 'react';
 import YourButton from './Layouts/YourButton'
 import BuildButton from './Layouts/BuildButton';
 import Clipboard from './Components/Clipboard/Clipboard';
+import Frame from './Assets/frame.jpg'
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { display } from './Redux/CrazyButton';

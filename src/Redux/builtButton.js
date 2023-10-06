@@ -14,8 +14,10 @@ export const builtButton = createSlice({
             bold:"normal",
             italic:"normal",
             onOffBorder: false,
-            borderColor: "black",
-            borderSize: "none"
+            border: ["0px solid","black"],
+            Upcase: "capitalize",
+            onoffShadow: false,
+            boxShadow:["0px","0px","0px","0px","black"],
         }, //a list which it will be changed
     },
     reducers:{
@@ -50,16 +52,37 @@ export const builtButton = createSlice({
             action.payload === true ? state.list.italic = "italic" : state.list.italic = "normal";
         },
         isBorder: (state,action) => {
-            action.payload === true ? state.list.onOffBorder = true : state.list.onOffBorder = false; state.list.borderSize="none";
+            action.payload === true ? state.list.onOffBorder = true : state.list.onOffBorder = false; state.list.border= ["0px solid","black"];
         },
         borderColor: (state,action) => {
-            state.list.borderColor = action.payload;
+            state.list.border[1] = action.payload;
         },
         borderSize: (state,action) => {
-            state.list.borderSize = `${action.payload}px solid`;
-        }
+            state.list.border[0]= `${action.payload}px solid`;
+        },
+        toUpcase : (state,action) => {
+            action.payload === true ? state.list.Upcase = "uppercase" : state.list.Upcase = "capitalize";
+        },
+        isShadow: (state,action) => {
+            action.payload === true ? state.list.onoffShadow = true : state.list.onoffShadow = false; state.list.boxShadow = ["0px","0px","0px","0px","black"];
+        },
+        XShadow: (state,action) =>  {
+            state.list.boxShadow[0] = `${action.payload}px`;
+        },
+        YShadow: (state,action) =>  {
+            state.list.boxShadow[1] = `${action.payload}px`;
+        },
+        blur: (state,action) =>  {
+            state.list.boxShadow[2] = `${action.payload}px`;
+        },
+        spread: (state,action) =>  {
+            state.list.boxShadow[3] = `${action.payload}px`;
+        },
+        shadowColor: (state,action) => {
+            state.list.boxShadow[4] = action.payload;
+        },
     },
 });
-export const {pYValue,pXValue,nameButton,fontsize,fontfamily,fontcolor,bgcolor,rad,isBold,isItalic,isBorder,borderColor,borderSize} = builtButton.actions;
+export const {pYValue,pXValue,nameButton,fontsize,fontfamily,fontcolor,bgcolor,rad,isBold,isItalic,isBorder,borderColor,borderSize,toUpcase,isShadow,XShadow,YShadow,blur,spread,shadowColor} = builtButton.actions;
 
 export default builtButton.reducer;
