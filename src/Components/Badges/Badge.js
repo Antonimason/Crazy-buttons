@@ -15,7 +15,7 @@ function Badge(props){
                 </div>
 
                 <div className='badge-buttons'>
-                    <button className='badge-button' onClick={(e)=>{dispatch(copy(props.button.props.stylefix));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},5000)}}>Copy</button>
+                    <button className='badge-button' onClick={(e)=>{dispatch(copy(props.button.props.stylefix));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
                 </div>
                 
             </div>

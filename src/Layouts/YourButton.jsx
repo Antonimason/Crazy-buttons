@@ -10,8 +10,9 @@ function YourButton() {
 
   // Showing up the data
   const dispatch = useDispatch();
-  const list = useSelector(state=> state.buttons.list)
-  const modifyList = list.map(items=>{return (<Badge key={items.key} button={<CreateButton stylefix={items.styleCss} id={items.id} key={items.key} copy="Copy" copied="Copied!"/>}/>)})
+  const list = useSelector(state=> state.buttons.list);
+  
+  const modifyList = list.map(items=>{return (<Badge key={items.key} button={<CreateButton stylefix={items.styleCss} id={items.id} key={items.key} copied={"Copied!"}/>}/>)})
   
   //function for storing the data
   const ShowButtons = (key) => {

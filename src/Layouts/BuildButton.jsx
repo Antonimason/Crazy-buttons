@@ -35,9 +35,9 @@ function BuildButton () {
             <div className="buttonbuild__sizing">
                 <h3 className="title">BUTTON SIZE</h3>
                 <label>Vertical sizing
-                <input name="padding" type="number" min='0' max='40'  onChange={(e) =>{dispatch(pYValue(e.target.value))}}/></label>
+                <input name="padding" type="range" min='0' max='40'  onChange={(e) =>{dispatch(pYValue(e.target.value))}}/></label>
                 <label>Horizontal sizing
-                <input name="padding" type="number" min='0' max='40'  onChange={(e) =>{dispatch(pXValue(e.target.value))}}/></label>
+                <input name="padding" type="range" min='0' max='40'  onChange={(e) =>{dispatch(pXValue(e.target.value))}}/></label>
                 <label>Corner Radius<input type="number" min="0" max="50" onChange={(e)=>{dispatch(rad(e.target.value))}}/></label>
             </div>
 
