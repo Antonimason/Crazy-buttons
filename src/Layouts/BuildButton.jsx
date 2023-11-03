@@ -23,7 +23,7 @@ function BuildButton () {
                     <option value="Impact">Impact</option>
                 </select></label>
 
-                <label>Font-Size<input name="fontsize" type="number" min='25' max='60' onChange={(e) =>{dispatch(fontsize(e.target.value))}}/></label>
+                <label>Font-Size <p>{list.size}</p><input name="fontsize" type="range" min='20' max='60' onChange={(e) =>{dispatch(fontsize(e.target.value))}}/></label>
                 <div className="text__inline">
                     <label>Bold?<input type="checkbox" onChange={(e)=>{e.target.checked ? dispatch(isBold(true)) : dispatch(isBold(false))}}/></label>
                     <label>Italic?<input type="checkbox" onChange={(e)=>{e.target.checked ? dispatch(isItalic(true)) : dispatch(isItalic(false))}}/></label>
@@ -34,9 +34,9 @@ function BuildButton () {
             </div>
             <div className="buttonbuild__sizing">
                 <h3 className="title">BUTTON SIZE</h3>
-                <label>Vertical sizing
+                <label>Vertical sizing <p>{list.padding[0]}</p>
                 <input name="padding" type="range" min='0' max='40'  onChange={(e) =>{dispatch(pYValue(e.target.value))}}/></label>
-                <label>Horizontal sizing
+                <label>Horizontal sizing <p>{list.padding[1]}</p>
                 <input name="padding" type="range" min='0' max='40'  onChange={(e) =>{dispatch(pXValue(e.target.value))}}/></label>
                 <label>Corner Radius<input type="number" min="0" max="50" onChange={(e)=>{dispatch(rad(e.target.value))}}/></label>
             </div>

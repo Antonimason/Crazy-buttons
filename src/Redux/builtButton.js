@@ -6,8 +6,8 @@ export const builtButton = createSlice({
         list:{
             name:"Click",
             family: "Open Sans",
-            size:"25px",
-            padding:["0px","0px"],
+            size:"40px",
+            padding:["20px","20px"],
             color:"black",
             background:"lightblue",
             radius:"none",
