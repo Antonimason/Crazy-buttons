@@ -68,3 +68,9 @@
     align-items: center;
     flex-direction: column;
 }
+
+@media only screen and (width > 1200px) {
+    .buildbutton{
+        flex-direction: row;
+    }
+}

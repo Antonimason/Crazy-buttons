@@ -14,7 +14,7 @@ export const builtButton = createSlice({
             bold:"normal",
             italic:"normal",
             onOffBorder: false,
-            border: ["10px solid","#000000"],
+            border: ["0px solid","#000"],
             Upcase: "capitalize",
             onoffShadow: false,
             boxShadow:["0px","0px","0px","0px","black"],

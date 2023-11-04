@@ -3,11 +3,12 @@ import "./BuildButton.css"
 import { useSelector, useDispatch } from 'react-redux';
 import { pYValue, pXValue, nameButton,fontsize,fontfamily,fontcolor,bgcolor,rad,isBold,isItalic,isBorder,borderColor,borderSize,toUpcase,isShadow,XShadow,YShadow,blur,spread,shadowColor } from '../Redux/builtButton'
 function BuildButton () {
-
+    
     const dispatch = useDispatch();
-    const list = useSelector(state=> state.zise.list)
+    const list = useSelector(state=> state.zise.list);
     return (
         <div className="buildbutton">
+            <div>
             <div className="buildbutton__text">
                 <h3 className="title">TEXT STYLE</h3>
                 <label>Button Text
@@ -54,8 +55,8 @@ function BuildButton () {
                 <div className="buildbutton__border">
                     <label>Border?<button onClick={(e)=>{e.preventDefault(); !list.onOffBorder ? dispatch(isBorder(true)) : dispatch(isBorder(false))}}>+</button></label>
                     <div className="buildbutton__borderstyle" style={list.onOffBorder ? {display: "flex"} : {display:"none"}}>
-                        <label>Border Color<input type="color" onChange={(e)=>{dispatch(borderColor(e.target.value))}}/></label>
-                        <label>Border Size <p className="text__amount">{list.border[0]}</p><input  type="range" min='0' max='20' onChange={(e) =>{dispatch(borderSize(e.target.value))}}/></label>
+                        <label>Border Color<input type="color" value={list.border[1]} onChange={(e)=>{dispatch(borderColor(e.target.value))}}/></label>
+                        <label>Border Size <p className="text__amount"></p><input  type="range" min='0' max='20' onChange={(e) =>{dispatch(borderSize(e.target.value))}}/></label>
                     </div>
                 </div>
 
@@ -64,15 +65,16 @@ function BuildButton () {
                     <label>Shadow?<button onClick={(e)=>{e.preventDefault(); !list.onoffShadow ? dispatch(isShadow(true)) : dispatch(isShadow(false))}}>+</button></label>
                     <div style={list.onoffShadow ? {display: "flex"} : {display:"none"}}>
 
-                        <label>Vertical Position<input  type="range" min='-50' max='50' onChange={(e) =>{dispatch(XShadow(e.target.value))}}/>{list.boxShadow[0]}</label>
-                        <label>Horizontal Position<input  type="range" min='-50' max='50' onChange={(e) =>{dispatch(YShadow(e.target.value))}}/>{list.boxShadow[1]}</label>
-                        <label>Blur<input type="number" min="0" max="80" onChange={(e)=>{dispatch(blur(e.target.value))}}/></label>
-                        <label>Spread Radius<input type="number" min="0" max="10" onChange={(e)=>{dispatch(spread(e.target.value))}}/></label>
-                        <label>Shadow Color<input type="color" onChange={(e)=>{dispatch(shadowColor(e.target.value))}}/></label>
+                        <label>Vertical Position<p className="text__amount">{list.boxShadow[0]}</p><input  type="range" min='-50' max='50' onChange={(e) =>{dispatch(XShadow(e.target.value))}}/>{list.boxShadow[0]}</label>
+                        <label>Horizontal Position<p className="text__amount">{list.boxShadow[1]}</p><input  type="range" min='-50' max='50' onChange={(e) =>{dispatch(YShadow(e.target.value))}}/>{list.boxShadow[1]}</label>
+                        <label>Blur<p className="text__amount">{list.boxShadow[2]}</p><input type="range" min="-20" max="20" onChange={(e)=>{dispatch(blur(e.target.value))}}/></label>
+                        <label>Spread Radius<p className="text__amount">{list.boxShadow[3]}</p><input type="range" min="-10" max="10" onChange={(e)=>{dispatch(spread(e.target.value))}}/></label>
+                        <label>Shadow Color<input type="color" value={list.boxShadow[4]} onChange={(e)=>{dispatch(shadowColor(e.target.value))}}/></label>
 
                     </div>
                 </div>
 
+            </div>
             </div>
             <div className="myButton">
                 <button className="mybutton__prototype" 
