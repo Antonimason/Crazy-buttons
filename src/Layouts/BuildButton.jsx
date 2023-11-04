@@ -23,7 +23,7 @@ function BuildButton () {
                     <option value="Impact">Impact</option>
                 </select></label>
 
-                <label>Font-Size <p>{list.size}</p><input name="fontsize" type="range" min='20' max='60' onChange={(e) =>{dispatch(fontsize(e.target.value))}}/></label>
+                <label>Font-Size <p className="text__amount">{list.size}</p><input name="fontsize" type="range" min='20' max='60' onChange={(e) =>{dispatch(fontsize(e.target.value))}}/></label>
                 <div className="text__inline">
                     <label>Bold?<input type="checkbox" onChange={(e)=>{e.target.checked ? dispatch(isBold(true)) : dispatch(isBold(false))}}/></label>
                     <label>Italic?<input type="checkbox" onChange={(e)=>{e.target.checked ? dispatch(isItalic(true)) : dispatch(isItalic(false))}}/></label>
@@ -34,17 +34,17 @@ function BuildButton () {
             </div>
             <div className="buttonbuild__sizing">
                 <h3 className="title">BUTTON SIZE</h3>
-                <label>Vertical sizing <p>{list.padding[0]}</p>
+                <label>Vertical sizing <p className="text__amount">{list.padding[0]}</p>
                 <input name="padding" type="range" min='0' max='40'  onChange={(e) =>{dispatch(pYValue(e.target.value))}}/></label>
-                <label>Horizontal sizing <p>{list.padding[1]}</p>
+                <label>Horizontal sizing <p className="text__amount">{list.padding[1]}</p>
                 <input name="padding" type="range" min='0' max='40'  onChange={(e) =>{dispatch(pXValue(e.target.value))}}/></label>
-                <label>Corner Radius<input type="number" min="0" max="50" onChange={(e)=>{dispatch(rad(e.target.value))}}/></label>
+                <label>Corner Radius <p className="text__amount">{list.radius}</p><input type="range" min="0" max="50" onChange={(e)=>{dispatch(rad(e.target.value))}}/></label>
             </div>
 
             <div className="buildbutton__colour">
                 <h3 className="title">BUTTON COLOUR</h3>
-                <label>Text Colour<input type="color" onChange={(e)=>{dispatch(fontcolor(e.target.value))}}/></label>
-                <label>Background Color<input type="color" onChange={(e)=>{dispatch(bgcolor(e.target.value))}}/></label>
+                <label>Text Colour<input type="color" value={list.color} onChange={(e)=>{dispatch(fontcolor(e.target.value))}}/></label>
+                <label>Background Color<input type="color" value={list.background} onChange={(e)=>{dispatch(bgcolor(e.target.value))}}/></label>
             </div>
 
             <div className="buildbutton__extras">
@@ -55,7 +55,7 @@ function BuildButton () {
                     <label>Border?<button onClick={(e)=>{e.preventDefault(); !list.onOffBorder ? dispatch(isBorder(true)) : dispatch(isBorder(false))}}>+</button></label>
                     <div className="buildbutton__borderstyle" style={list.onOffBorder ? {display: "flex"} : {display:"none"}}>
                         <label>Border Color<input type="color" onChange={(e)=>{dispatch(borderColor(e.target.value))}}/></label>
-                        <label>Border Size<input  type="number" min='0' max='20' onChange={(e) =>{dispatch(borderSize(e.target.value))}}/></label>
+                        <label>Border Size <p className="text__amount">{list.border[0]}</p><input  type="range" min='0' max='20' onChange={(e) =>{dispatch(borderSize(e.target.value))}}/></label>
                     </div>
                 </div>
 
