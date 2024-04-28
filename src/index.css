@@ -1,17 +1,21 @@
 *{
-  margin:0;padding:0;box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+*:link {
+  outline: none; /* Elimina el borde de enfoque en todos los elementos */
 }
 html{
   font-size: 100%;
 }
 body {
-  margin: 0;
-  font-family: 'IBM Plex Mono', monospace;
+  width: 100%;
+  font-family: 'verdana';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 100%;
-  background:url('./Assets/frame1.jpg');
-  font-size: 1.2em;
+  color: black;
 }
 
 code {

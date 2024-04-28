@@ -8,21 +8,23 @@ import buttonList from '../Redux/buttons.json';
 
 function YourButton() {
 
-  // Showing up the data
+  // Initializing hooks for accessing state and dispatch function
   const dispatch = useDispatch();
   const list = useSelector(state=> state.buttons.list);
-  
+
+  // Mapping over button list to create Badge components
   const modifyList = list.map(items=>{return (<Badge key={items.key} button={<CreateButton stylefix={items.styleCss} id={items.id} key={items.key} copied={"Copied!"}/>}/>)})
   
-  //function for storing the data
+  // Function to filter and update button list based on selected category
   const ShowButtons = (key) => {
-    const lista = buttonList;
+    const buttonListJSON = buttonList; // Assigning button list data from JSON file to a variable
+
 
     switch(key){
 
       case "all":
         let buttonAll = [];
-        lista.buttons.map(item=>{;
+        buttonListJSON.buttons.map(item=>{;
             return buttonAll.push(item)
         });
         dispatch(valor(buttonAll));
@@ -30,7 +32,7 @@ function YourButton() {
 
       case "minimalist":
         let buttonMini = [];
-        lista.buttons.map(item=>{
+        buttonListJSON.buttons.map(item=>{
           if(item.model === 'minimalist') return buttonMini.push(item)
         return buttonMini});
         dispatch(valor(buttonMini));
@@ -38,26 +40,31 @@ function YourButton() {
 
       case "2d":
         let button2d = [];
-        lista.buttons.map(item=>{
+        buttonListJSON.buttons.map(item=>{
           if(item.model === '2d') return button2d.push(item)
-        return button2d});
+        return button2d
+        });
         dispatch(valor(button2d));
         break;
 
       case "3d":
           let button3d = [];
-          lista.buttons.map(item=>{
+          buttonListJSON.buttons.map(item=>{
             if(item.model === '3d') return button3d.push(item)
-          return button3d});
+          return button3d
+          });
           dispatch(valor(button3d));
           break;
+
       case "hover":
         let buttonHover = [];
-          lista.buttons.map(item=>{
-            if(item.model === 'hover') return buttonHover.push(item)
-          return buttonHover});
+        buttonListJSON.buttons.map(item=>{
+          if(item.model === 'hover') return buttonHover.push(item)
+          return buttonHover
+        });
           dispatch(valor(buttonHover));
           break;
+
       default: console.log("press a button");
     }
     return console.log("it works")

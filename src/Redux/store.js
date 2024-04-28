@@ -1,12 +1,16 @@
+// Importing necessary functions and modules from Redux Toolkit
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from './buttonSelection';
-import sizeButton from './builtButton';
-import createButton from './CrazyButton';
 
+// Importing reducers for different slices of state
+import userReducer from './buttonSelection'; // Importing reducer for user selection
+import sizeButton from './builtButton'; // Importing reducer for button size
+import createButton from './CrazyButton'; // Importing reducer for button creation
+
+// Configuring the Redux store with combined reducers
 export const store = configureStore({
     reducer: {
-      CreateButton:createButton,
-      buttons:userReducer,
-      zise:sizeButton
+        CreateButton: createButton, // Setting reducer for button creation slice of state
+        buttons: userReducer, // Setting reducer for user selection slice of state
+        zise: sizeButton // Setting reducer for button size slice of state
     }
 });

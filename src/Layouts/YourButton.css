@@ -1,17 +1,33 @@
 .button{
     width: 100%;
-    padding: 1rem;
     display: flex;
     gap: 4rem;
     flex-direction: column;
     place-items:center;
+    margin-top: 6vh;
+    padding: 2rem;
 }
 
 .buttons__selection{
     display: flex;
     place-items: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
+.select__button{
+    background: transparent;
+    color: black;
+    width: 5rem;
+    cursor:pointer;
+    padding: .5rem .8rem;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    transition: 0.5s all;
+}
+.select__button:hover{
+    color: rgb(176, 176, 176);
+}
+
 .buttons__show{
     width:100%;
     display: flex;
@@ -21,8 +37,8 @@
     gap: 1rem;
     flex-wrap:wrap;
 }
-
-.select__button{
-    cursor:pointer;
-    padding: .5rem .8rem;
+@media screen and (width > 1024px) {
+    .buttons__show{
+        width: 70rem;
+    }
 }

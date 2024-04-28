@@ -1,27 +1,55 @@
+/*-----------------React's imports-------------------*/
 import React from 'react';
-import YourButton from './Layouts/YourButton'
-import BuildButton from './Layouts/BuildButton';
+import { useSelector } from 'react-redux';
+/*------------------ CSS import ---------------------*/
+import './App.css'; // Import CSS styles for the App component
+/*----------------Components imports-----------------*/
 import Clipboard from './Components/Clipboard/Clipboard';
-import './App.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { display } from './Redux/CrazyButton';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+/*----------------- Layout imports ------------------*/
+import Home from './Layouts/Home/Home';
+import YourButton from './Layouts/YourButton';
+import BuildButton from './Layouts/BuildButton';
 
 function App() {
+  
+  // Redux state selectors
+  const displayOn = useSelector(state=> state.CreateButton.displayOn); // Select the 'displayOn' state from the Redux store
+  const clipboards = useSelector(state=>state.buttons.clipboard); // Select the 'clipboard' state from the Redux store
+  
+  // Layout selector function.
+  const ComponentToShow = () => {
+    switch (displayOn) {
+        case 'Home':
+            return <Home />; // Render Home component if 'displayOn' state is 'Home'
+        case 'Header':
+            return <Header />; // Render Header component if 'displayOn' state is 'Header'
+        case 'YourButton':
+            return <YourButton />; // Render YourButton component if 'displayOn' state is 'YourButton'
+        case 'BuildButton':
+            return <BuildButton />; // Render BuildButton component if 'displayOn' state is 'BuildButton'
+        default:
+            return null; // Default case returns null
+    }
+  };
 
-  const dispatch = useDispatch();
-  const displayOn = useSelector(state=> state.CreateButton.displayOn)
-  const clipboards = useSelector(state=>state.buttons.clipboard)
-  console.log(clipboards)
+  // Return Clipboard component if someone has copied any component
+  const showClipboard = () => {
+    if(clipboards){
+      return <Clipboard/>; // Render Clipboard component if 'clipboards' state is truthy
+    }
+  }
+
   return (
     <div className="App">
-      <div className="App__buttons">
-        <button className="app__button" onClick={()=>dispatch(display(true))}>Create Button</button>
-        <button className="app__button" onClick={()=>dispatch(display(false))}>Buttons List</button>
-      </div>
-      {displayOn ? <BuildButton/> : <YourButton/> }
-      {clipboards ? <Clipboard/> : console.log("no")}
+      <Header/>
+      {ComponentToShow()}
+      {showClipboard()}
+      <Footer/>
     </div>
   );
 }
 
-export default App;
+export default App; // Export App component as default
+

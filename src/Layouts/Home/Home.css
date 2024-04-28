@@ -1,0 +1,36 @@
+.home-container{
+    width: 100%;
+    max-width: 90rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6vh;
+    padding: 4rem 0;
+    color: black;
+}
+.home-welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+.home-text{
+    text-align: center;
+    padding: 10px;
+}
+.home-map{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (width > 1024px) {
+    .home-map{
+        width: 70rem;
+    }
+}

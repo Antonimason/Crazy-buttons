@@ -1,7 +1,19 @@
+input[type="color" i] {
+    border-radius: 50%;
+    inline-size: 20px;
+    block-size: 20px;
+    border:none;
+    overflow: hidden;
+    cursor: pointer;
+}
+input[type="color" i]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: none;
+}
 .buildbutton{
     width:100%;
-    margin:0 auto;
-    padding: 0.5rem 0.3rem 2rem 0.3rem;
+    margin:6vh auto 0 auto;
+    padding: 2rem;
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -9,6 +21,12 @@
     flex-direction: column;
     background-color:rgba(255,255,255,0.6);
     backdrop-filter: blur(10px);
+}
+.buildbutton-container, .myButton{
+    border:1px solid rgba(0,0,0,0.3);
+    border-radius: 10px;
+    width: 100%;
+    padding:0.625rem;
 }
 .title{
     align-self: flex-start;
@@ -30,8 +48,6 @@
 }
 
 .buttonbuild__sizing{
-    width: 100%;
-    padding:0.625rem;
     display:flex;
     gap: 10px;
     justify-content: center;
@@ -40,8 +56,6 @@
 }
 
 .buildbutton__colour{
-    width: 100%;
-    padding:0.625rem;
     display:flex;
     gap: 10px;
     justify-content: center;
@@ -50,8 +64,6 @@
 }
 
 .buildbutton__extras{
-    width: 100%;
-    padding:0.625rem;
     display:flex;
     gap: 10px;
     justify-content: center;
@@ -60,17 +72,42 @@
 }
 
 .myButton{
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
+    height: 300px;
     padding:2rem;
     display:flex;
     gap: 2rem;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
-
-@media only screen and (width > 1200px) {
+.buildbutton-shadow-sub{
+    display: flex;
+    flex-wrap: wrap;
+}
+.myButton-style{
+    padding: 7px 10px;
+}
+@media only screen and (width > 1024px) {
     .buildbutton{
+        align-items: flex-start;
         flex-direction: row;
     }
+    .buildbutton-container{
+        height: 300px;
+        justify-content: flex-start;
+    }
+    .buildbutton__text{
+        flex-shrink: 2.5;
+    }
+    
+    .buttonbuild__sizing{
+        flex-shrink: 2;
+    }
+    
+    .buildbutton__colour{
+        flex-shrink: 2;
+    }
+    
 }
