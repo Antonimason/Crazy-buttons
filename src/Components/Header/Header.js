@@ -31,7 +31,7 @@ function Header(){
                             <li className="header-nav-button sub" onClick={()=>{dispatch(display("BuildButton")); showNavBar()}}>Build Button</li>
                     </ul>
                     <li className="header-nav-button">Footer</li>
-                    <li className="header-nav-button">Carousel</li>
+                    <li className="header-nav-button" onClick={()=>{dispatch(display("Carousel")); showNavBar()}}>Carousel</li>
                 </ul>
                 <img src="" alt="" className="header-logo"/>
             </div>

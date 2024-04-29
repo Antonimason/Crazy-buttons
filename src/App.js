@@ -11,6 +11,7 @@ import Footer from './Components/Footer/Footer';
 import Home from './Layouts/Home/Home';
 import YourButton from './Layouts/YourButton';
 import BuildButton from './Layouts/BuildButton';
+import Carousel from './Layouts/Carousel/Carousel';
 
 function App() {
   
@@ -29,6 +30,8 @@ function App() {
             return <YourButton />; // Render YourButton component if 'displayOn' state is 'YourButton'
         case 'BuildButton':
             return <BuildButton />; // Render BuildButton component if 'displayOn' state is 'BuildButton'
+        case 'Carousel':
+            return <Carousel />; // Render Carousel component if 'displayOn' state is 'Carousel'
         default:
             return null; // Default case returns null
     }
