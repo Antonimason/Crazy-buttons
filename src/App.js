@@ -12,12 +12,13 @@ import Home from './Layouts/Home/Home';
 import YourButton from './Layouts/YourButton';
 import BuildButton from './Layouts/BuildButton';
 import Carousel from './Layouts/Carousel/Carousel';
+import Modal from './Layouts/Modal/Modal';
 
 function App() {
   
   // Redux state selectors
   const displayOn = useSelector(state=> state.CreateButton.displayOn); // Select the 'displayOn' state from the Redux store
-  const clipboards = useSelector(state=>state.buttons.clipboard); // Select the 'clipboard' state from the Redux store
+  const clipboards = useSelector(state=>state.copy.clipboard); // Select the 'clipboard' state from the Redux store
   
   // Layout selector function.
   const ComponentToShow = () => {
@@ -32,6 +33,8 @@ function App() {
             return <BuildButton />; // Render BuildButton component if 'displayOn' state is 'BuildButton'
         case 'Carousel':
             return <Carousel />; // Render Carousel component if 'displayOn' state is 'Carousel'
+        case 'Modal':
+            return <Modal />; // Render Modal component if 'displayOn' state is 'Modal'
         default:
             return null; // Default case returns null
     }

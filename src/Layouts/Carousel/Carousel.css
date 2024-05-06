@@ -21,7 +21,7 @@
   align-items: center;
   flex-direction: column;
   width:100%;
-  max-width: 50rem;
+  max-width: 55rem;
 }
 .carrousel {
     display: flex;
@@ -104,4 +104,29 @@
   .carousel-htmlContainer{
     width: 100%;
     border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+
+  .css, .js{
+    display:none;
+  }
+
+  .carousel-code{
+    width: 100%;
+  }
+  .pre{
+    width: 100%;
+  }
+  .language-css{
+    width: 100%;
+    font-size: 0.7em;
+  }
+
+  @media  (width > 768px) {
+    .language-css{
+      font-size: 0.8em;
+    }
   }

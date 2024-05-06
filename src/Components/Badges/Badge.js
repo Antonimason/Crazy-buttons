@@ -1,7 +1,7 @@
 import './Badge.css';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { copy, clipboards} from '../../Redux/buttonSelection';
+import { copy, clipboards} from '../../Redux/CopyCode';
 
 function Badge(props){
 

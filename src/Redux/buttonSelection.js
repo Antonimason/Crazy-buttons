@@ -16,20 +16,11 @@ export const buttonSelection = createSlice({
         valor: (state, action) => {
             state.list = action.payload; // Update list with the value passed in action payload
         },
-        // Reducer function to update copied property and copy text to clipboard
-        copy: (state, action) => {
-            state.copied = action.payload; // Update copied with the value passed in action payload
-            navigator.clipboard.writeText(state.copied); // Write text to clipboard using the copied value
-        },
-        // Reducer function to update clipboard property
-        clipboards: (state, action) => {
-            state.clipboard = action.payload; // Update clipboard with the value passed in action payload
-        },
     },
 });
 
 // Exporting action creators
-export const { valor, copy, clipboards } = buttonSelection.actions;
+export const { valor } = buttonSelection.actions;
 
 // Exporting reducer function
 export default buttonSelection.reducer;

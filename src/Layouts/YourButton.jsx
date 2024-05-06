@@ -15,73 +15,41 @@ function YourButton() {
   // Mapping over button list to create Badge components
   const modifyList = list.map(items=>{return (<Badge key={items.key} button={<CreateButton stylefix={items.styleCss} id={items.id} key={items.key} copied={"Copied!"}/>}/>)})
   
-  // Function to filter and update button list based on selected category
-  const ShowButtons = (key) => {
-    const buttonListJSON = buttonList; // Assigning button list data from JSON file to a variable
 
+// Function to filter buttons based on a key
+function buttonFilter(key){
+  let buttonSelected = []; // Initialize an empty array to store selected buttons
+  const buttonListJSON = buttonList; // Get the button list data from JSON file
 
-    switch(key){
-
-      case "all":
-        let buttonAll = [];
-        buttonListJSON.buttons.map(item=>{;
-            return buttonAll.push(item)
-        });
-        dispatch(valor(buttonAll));
-        break;
-
-      case "minimalist":
-        let buttonMini = [];
-        buttonListJSON.buttons.map(item=>{
-          if(item.model === 'minimalist') return buttonMini.push(item)
-        return buttonMini});
-        dispatch(valor(buttonMini));
-        break;
-
-      case "2d":
-        let button2d = [];
-        buttonListJSON.buttons.map(item=>{
-          if(item.model === '2d') return button2d.push(item)
-        return button2d
-        });
-        dispatch(valor(button2d));
-        break;
-
-      case "3d":
-          let button3d = [];
-          buttonListJSON.buttons.map(item=>{
-            if(item.model === '3d') return button3d.push(item)
-          return button3d
-          });
-          dispatch(valor(button3d));
-          break;
-
-      case "hover":
-        let buttonHover = [];
-        buttonListJSON.buttons.map(item=>{
-          if(item.model === 'hover') return buttonHover.push(item)
-          return buttonHover
-        });
-          dispatch(valor(buttonHover));
-          break;
-
-      default: console.log("press a button");
-    }
-    return console.log("it works")
+  // Check if the key is not 'all'
+  if(key !== 'all'){
+      // If not 'all', filter buttons based on the key
+      buttonListJSON.buttons.map(item => {
+          // If the model of the button matches the key, add it to buttonSelected array
+          if(item.model === key) buttonSelected.push(item);
+          return buttonSelected; // Return the updated buttonSelected array
+      });
+      dispatch(valor(buttonSelected)); // Dispatch the filtered buttons
+  } else {
+      // If key is 'all', include all buttons
+      buttonListJSON.buttons.map(item => {
+          buttonSelected.push(item); // Add each button to buttonSelected array
+          return buttonSelected; // Return the updated buttonSelected array
+      });
+      dispatch(valor(buttonSelected)); // Dispatch all buttons
+  }
 }
 
   return (
     <div className="button">
       <div className="buttons__selection">
-      <button className="select__button" onClick={()=>ShowButtons("all")}>All</button>
-      <button className="select__button" onClick={()=>ShowButtons("minimalist")}>Minimalist</button>
-      <button className="select__button" onClick={()=>ShowButtons("2d")}>2D</button>
-      <button className="select__button" onClick={()=>ShowButtons("3d")}>3D</button>
-      <button className="select__button" onClick={()=>ShowButtons("hover")}>Hover</button>
+      <button className="select__button" onClick={()=>buttonFilter("all")}>All</button>
+      <button className="select__button" onClick={()=>buttonFilter("minimalist")}>Minimalist</button>
+      <button className="select__button" onClick={()=>buttonFilter("2d")}>2D</button>
+      <button className="select__button" onClick={()=>buttonFilter("3d")}>3D</button>
+      <button className="select__button" onClick={()=>buttonFilter("hover")}>Hover</button>
       </div>
-      <div className="buttons__show">
-        {modifyList}
-      </div>
+      <div className="buttons__show">{modifyList}</div>
     </div>
   );
 }

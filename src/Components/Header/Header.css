@@ -45,7 +45,10 @@
 }
 
 .collapse-button{
-    font-size: 0.7em;
+    font-size: 0.8em;
+    display: inline-block;
+    padding-left: 10px;
+    text-align: right;
 }
 .header-nav-sub{
     display:none;
@@ -60,7 +63,7 @@
     font-size: 0.9em;
 }
 
-@media (width > 1080px) {
+@media (width > 1024px) {
     .header-nav{
         width: 20%; 
     }

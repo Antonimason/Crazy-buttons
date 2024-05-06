@@ -25,13 +25,13 @@ function Header(){
                     <li className="header-nav-button" onClick={()=>{dispatch(display("Header")); showNavBar()}}>Header</li>
                     <li className="header-nav-button" onClick={()=>{dispatch(collapse("button"));collapseNavBar(".header-nav-sub")}}>
                         Button<span className="collapse-button">{isCollapseButton === false ? <LiaPlusSolid/> : <LiaMinusSolid/>}</span>
-                    </li>
-                    <ul className="header-nav-sub">
+                        <ul className="header-nav-sub">
                             <li className="header-nav-button sub" onClick={()=>{dispatch(display("YourButton")); showNavBar()}}>Button List</li>
                             <li className="header-nav-button sub" onClick={()=>{dispatch(display("BuildButton")); showNavBar()}}>Build Button</li>
-                    </ul>
-                    <li className="header-nav-button">Footer</li>
+                        </ul>
+                    </li>
                     <li className="header-nav-button" onClick={()=>{dispatch(display("Carousel")); showNavBar()}}>Carousel</li>
+                    <li className="header-nav-button" onClick={()=>{dispatch(display("Modal")); showNavBar()}}>Modal</li>
                 </ul>
                 <img src="" alt="" className="header-logo"/>
             </div>
