@@ -6,6 +6,7 @@ import './Carousel.css';
 import myJson from '../../Redux/buttons.json';
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import * as Formater from "../../Kit/Formater"
 
 function Carousel(){
     const dispatch = useDispatch();
@@ -38,64 +39,7 @@ function Carousel(){
         }
     }
 
-    function formatCssCode(text){
-        let formattedText = text.replace(/;/g, ';\n  ');
 
-        formattedText = formattedText.replace(/{/g, '{\n  ');
-
-        formattedText = formattedText.replace(/}/g, '}\n\n');
-
-        return formattedText
-    }
-
-    function formatJavaScriptCode(text) {
-        let formattedText = text.replace(/\/\*([\s\S]*?)\*\//g, match => {
-            // Mantener los comentarios multilinea
-            return match.replace(/\n\s*\*\s*/g, '\n  '); // Agregar dos espacios después de cada * en los comentarios
-        });
-    
-        formattedText = formattedText.replace(/(\/\/[^\n]*)/g, match => {
-            // Manejar comentarios de una sola línea
-            return match.replace(/\n/g, '\n  '); // Agregar dos espacios después de cada salto de línea en los comentarios de una sola línea
-        });
-        
-        formattedText = formattedText.replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, match => {
-            // Manejar cadenas de texto
-            return match.replace(/\n/g, '\n  '); // Agregar dos espacios después de cada salto de línea dentro de las cadenas de texto
-        });
-    
-        formattedText = formattedText.replace(/(;|{|})/g, match => {
-            // Agregar dos espacios al principio de cada línea después de los puntos y comas, llaves de apertura y llaves de cierre
-            return match + '\n  ';
-        });
-    
-        return formattedText;
-    }
-
-    
-
-    function formatHTMLCode(html) {
-        let formattedHTML = '';
-        let indentationLevel = 0;
-    
-        html.split(/(<[^>]*>)/).forEach((part) => {
-            if (part.startsWith('<') && part.endsWith('>')) {
-                if (part.startsWith('</')) {
-                    indentationLevel -= 1;
-                }
-                formattedHTML += '\n' + '  '.repeat(indentationLevel) + part.trim();
-                if (!part.startsWith('</')) {
-                    indentationLevel += 1;
-                }
-            } else {
-                if (part.trim() !== '') {
-                    formattedHTML += part.trim();
-                }
-            }
-        });
-    
-        return formattedHTML.trim();
-    }
 
       //-------------------Fuction to change forward the carousel images every 7 seconds-------------------//
     return(
@@ -120,21 +64,21 @@ function Carousel(){
                         <button onClick={()=>showLanguageContainer("js")}>JavaScript</button>
                     </div>
                     <div className="carousel-htmlContainer html">
-                        <button onClick={(e)=>{dispatch(copy(code.htmlCode));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                        <button onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(code.htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
                         <pre><code className="language-css">
-                            {formatHTMLCode(code.htmlCode)};
+                            {Formater.formatHTMLCode(code.htmlCode)};
                         </code></pre>
                     </div>
                     <div className="carousel-htmlContainer css">
-                        <button onClick={(e)=>{dispatch(copy(code.cssCode));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                        <button onClick={(e)=>{dispatch(copy(Formater.formatCssCode(code.cssCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
                         <pre><code className="language-css">
-                            {formatCssCode(code.cssCode)};
+                            {Formater.formatCssCode(code.cssCode)};
                         </code></pre>
                     </div>
                     <div className="carousel-htmlContainer js">
-                        <button onClick={(e)=>{dispatch(copy(code.jsCode));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                        <button onClick={(e)=>{dispatch(copy(Formater.formatJavaScriptCode(code.jsCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
                         <pre className="pre"><code className="language-css">
-                            {formatJavaScriptCode(code.jsCode)}
+                            {Formater.formatJavaScriptCode(code.jsCode)};
                         </code></pre>
                     </div>
                 </article>

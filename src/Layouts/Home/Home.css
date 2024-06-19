@@ -1,6 +1,7 @@
 .home-container{
     width: 100%;
     max-width: 90rem;
+    min-height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;

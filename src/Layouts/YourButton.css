@@ -6,6 +6,7 @@
     place-items:center;
     margin-top: 6vh;
     padding: 2rem;
+    min-height: 90vh;
 }
 
 .buttons__selection{
