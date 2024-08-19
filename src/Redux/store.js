@@ -7,6 +7,7 @@ import sizeButton from './builtButton'; // Importing reducer for button size
 import createButton from './CrazyButton'; // Importing reducer for button creation
 import carousels from './CarouselRedux';
 import copyCode from './CopyCode';
+import modalRedux from './modalRedux';
 
 // Configuring the Redux store with combined reducers
 export const store = configureStore({
@@ -15,6 +16,7 @@ export const store = configureStore({
         buttons: userReducer, // Setting reducer for user selection slice of state
         zise: sizeButton, // Setting reducer for button size slice of state
         carousel: carousels, // Setting reducer for carousel slice of staste
-        copy: copyCode
+        copy: copyCode,
+        modals: modalRedux
     }
 });
