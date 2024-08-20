@@ -12,7 +12,7 @@
 .carousel-title{
   position: relative;
 }
-.carousel-firstContent{
+.carousel-content{
   padding: 2rem;
   border: 1px solid rgba(0,0,0,0.3);
   border-radius: 10px;
@@ -101,13 +101,14 @@
     background: rgba(186, 186, 186, 0.8);
     color: black;
   }
-  .carousel-htmlContainer{
+  .carousel-htmlContainer, .carousel-secondContent-htmlContainer{
     width: 100%;
+    height: 25rem;
     border: 1px solid black;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    overflow-x: auto;
+    overflow-y: auto;  /* Solo activa scroll en el eje Y cuando sea necesario */
+    overflow-x: auto; /* Asegúrate de que no haya scroll horizontal innecesario */
+    padding: 1rem; 
   }
 
   .css, .js{
@@ -123,6 +124,7 @@
   .language-css{
     width: 100%;
     font-size: 0.7em;
+
   }
 
   @media  (width > 768px) {
@@ -130,3 +132,89 @@
       font-size: 0.8em;
     }
   }
+
+  .carousel-secondContent{
+    position:relative;
+    width:100%;
+    margin:100px auto 0 auto;
+    perspective:5000px;
+  }
+  
+  .margin-active{
+    padding-top: 200px;
+  }
+  .carousel{
+    position:absolute;
+    top: 2rem;
+    width:320px;
+    height:100px;
+    transform-style:preserve-3d;
+    animation:rotate360 60s infinite forwards linear;
+    }
+  
+  .image{
+    position:absolute;
+    width:300px;
+    height:140px;
+    top:20px;
+    left:10px;
+    right:10px;
+    background-size:cover;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    display:flex;
+    border: 1px solid rgba(0,0,0,0.7);
+  }
+  
+  .image > span{
+    margin:auto;
+    font-size:2rem;
+    }
+  
+   @keyframes rotate360{
+    from{
+    transform: rotateY(0deg);
+    }
+  
+  to{
+    transform: rotateY(-360deg);
+    }
+  
+  }
+  
+  .image:nth-child(1){
+    background: lightblue;
+     transform: rotateY(0deg) translateZ(430px)}
+  
+  .image:nth-child(2){
+    background: lightblue;
+     transform: rotateY(40deg) translateZ(430px)}
+  
+  .image:nth-child(3){
+    background: lightblue;
+     transform: rotateY(80deg) translateZ(430px)}
+  
+  .image:nth-child(4){
+    background: lightblue;
+     transform: rotateY(120deg) translateZ(430px)}
+  
+  .image:nth-child(5){
+    background: lightblue;
+     transform: rotateY(160deg) translateZ(430px)}
+  
+  .image:nth-child(6){
+    background: lightblue;
+     transform: rotateY(200deg) translateZ(430px)}
+  
+  .image:nth-child(7){
+    background: lightblue;
+     transform: rotateY(240deg) translateZ(430px)}
+  
+  .image:nth-child(8){
+    background: lightblue;
+     transform: rotateY(280deg) translateZ(430px)}
+  
+  .image:nth-child(9){
+    background: lightblue;
+     transform: rotateY(320deg) translateZ(430px)}
+  
+  

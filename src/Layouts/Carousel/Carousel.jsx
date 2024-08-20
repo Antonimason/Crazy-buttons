@@ -13,11 +13,12 @@ function Carousel(){
     const counter = useSelector(state=> state.carousel.currentPosition);
     const info = myJson.carousel[0].slides[counter];
     const code = myJson.carousel[0].slidesCode[0];
+    const code2 = myJson.carousel[0].slidesCode[1];
 
-    const showLanguageContainer = (key) =>{
-        let htmlContainer = document.querySelector('.html');
-        let cssContainer = document.querySelector('.css');
-        let jsContainer = document.querySelector('.js');
+    const showLanguageContainer = (key, carouselContainer) =>{
+        let htmlContainer = carouselContainer.querySelector('.html');
+        let cssContainer = carouselContainer.querySelector('.css');
+        let jsContainer = carouselContainer.querySelector('.js');
         switch(key){
             case "html":
                 htmlContainer.style.display = 'flex';
@@ -46,7 +47,7 @@ function Carousel(){
         <>
             <section className="carousel-container">
 
-                <article className="carousel-firstContent">
+                <article className="carousel-firstContent carousel-content">
                     <h3>Regular Carousel</h3>
                     <div className="carousel-firstConent-show">
                         <div className="carrousel" id="container1">
@@ -59,9 +60,9 @@ function Carousel(){
                         </div>
                     </div>
                     <div className="carousel-languageButtons">
-                        <button onClick={()=>showLanguageContainer("html")}>HTML</button>
-                        <button onClick={()=>showLanguageContainer("css")}>CSS</button>
-                        <button onClick={()=>showLanguageContainer("js")}>JavaScript</button>
+                        <button onClick={(e)=>showLanguageContainer("html",e.target.closest('.carousel-firstContent'))}>HTML</button>
+                        <button onClick={(e)=>showLanguageContainer("css",e.target.closest('.carousel-firstContent'))}>CSS</button>
+                        <button onClick={(e)=>showLanguageContainer("js",e.target.closest('.carousel-firstContent'))}>JavaScript</button>
                     </div>
                     <div className="carousel-htmlContainer html">
                         <button onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(code.htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
@@ -83,6 +84,42 @@ function Carousel(){
                     </div>
                 </article>
 
+            </section>
+
+            <section className="carousel-container">
+                <h3>3D Rotating Carousel</h3>
+                <article className="carousel-secondContent carousel-content">
+                    <div className="carousel">
+                        <div className="image"><span>First Slide</span></div>
+                        <div className="image"><span>Second Slide</span></div>
+                        <div className="image"><span>Third Slide</span></div>
+                        <div className="image"><span>Fourth Slide</span></div>
+                        <div className="image"><span>Fifth Slide</span></div>
+                        <div className="image"><span>Sixth Slide</span></div>
+                        <div className="image"><span>Seventh Slide</span></div>
+                        <div className="image"><span>eighth Slide</span></div>
+                        <div className="image"><span>Ninth Slide</span></div>
+                    </div>
+                    <div className="carousel-languageButtons margin-active">
+                        <button onClick={(e)=>showLanguageContainer("html",e.target.closest('.carousel-secondContent'))}>HTML</button>
+                        <button onClick={(e)=>showLanguageContainer("css",e.target.closest('.carousel-secondContent'))}>CSS</button>
+                        <button onClick={(e)=>showLanguageContainer("js",e.target.closest('.carousel-secondContent'))}>JavaScript</button>
+                    </div>
+                    <div className="carousel-htmlContainer html">
+                        <button onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(code2.htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                        <pre><code className="language-css">
+                            {Formater.formatHTMLCode(code2.htmlCode)};
+                        </code></pre>
+                    </div>
+                    <div className="carousel-htmlContainer css">
+                        <button onClick={(e)=>{dispatch(copy(Formater.formatCssCode(code2.cssCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                        <pre><code className="language-css">
+                            {Formater.formatCssCode(code2.cssCode)};
+                        </code></pre>
+                    </div>
+                    <div className="carousel-htmlContainer js">
+                    </div>
+                </article>
             </section>
         </>
     )
