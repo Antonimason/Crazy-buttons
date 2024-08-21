@@ -1,0 +1,56 @@
+.carousel-htmlContainer, .carousel-secondContent-htmlContainer{
+    width: 100%;
+    height: 25rem;
+    border: 1px solid black;
+    flex-direction: column;
+    overflow-y: auto;  /* Solo activa scroll en el eje Y cuando sea necesario */
+    overflow-x: auto; /* Asegúrate de que no haya scroll horizontal innecesario */
+    padding: 1rem; 
+  }
+.carousel-languageButtons{
+    margin: 30px;
+}
+  .css, .js{
+    display:none;
+  }
+
+  .carousel-code{
+    width: 100%;
+  }
+  .pre{
+    width: 100%;
+  }
+  .language-css{
+    width: 100%;
+    font-size: 0.7em;
+
+  }
+  .margin-active{
+    padding-top: 200px;
+  }
+
+  .buttonAnimation{
+    width:100px;
+    height:40px;
+    font-size:1.2em;
+    cursor:pointer;
+    background-color:#171717;
+    color:#ffffff;
+    border:none;
+    transition:all .4s;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+.buttonAnimation:hover{
+    border-radius:5px;
+    transform:translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db, 0 16px 10px -3px #39a2db}
+  
+  
+  
+  
+  @media  (width > 768px) {
+    .language-css{
+      font-size: 0.8em;
+    }
+  }

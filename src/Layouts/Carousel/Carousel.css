@@ -111,28 +111,6 @@
     padding: 1rem; 
   }
 
-  .css, .js{
-    display:none;
-  }
-
-  .carousel-code{
-    width: 100%;
-  }
-  .pre{
-    width: 100%;
-  }
-  .language-css{
-    width: 100%;
-    font-size: 0.7em;
-
-  }
-
-  @media  (width > 768px) {
-    .language-css{
-      font-size: 0.8em;
-    }
-  }
-
   .carousel-secondContent{
     position:relative;
     width:100%;
@@ -140,9 +118,6 @@
     perspective:5000px;
   }
   
-  .margin-active{
-    padding-top: 200px;
-  }
   .carousel{
     position:absolute;
     top: 2rem;
@@ -151,7 +126,9 @@
     transform-style:preserve-3d;
     animation:rotate360 60s infinite forwards linear;
     }
-  
+  .spacer{
+    margin-bottom: 200px;
+  }
   .image{
     position:absolute;
     width:300px;

@@ -5,16 +5,8 @@ export const modalRedux = createSlice({
   initialState: {
     modalShown: false,
     modal_style: false,
-    activated: false,
-    deactivated: false,
   },
   reducers: {
-    modalActive: (state, action) => {
-      state.activated = action.payload;
-    },
-    modalDeactivated: (state, action) => {
-      state.deactivated = action.payload;
-    },
     updateModalContent: (state, action) => {
       state.modalShown = action.payload;
     },
@@ -24,6 +16,6 @@ export const modalRedux = createSlice({
   },
 });
 
-export const { modalActive, modalDeactivated, updateModalContent, modalStyle } = modalRedux.actions;
+export const { updateModalContent, modalStyle } = modalRedux.actions;
 
 export default modalRedux.reducer;

@@ -114,7 +114,12 @@
                 {
                     "id":"1",
                     "htmlCode":"<figure class='notification'><div class='notification_body><img src='icons/check.circle.svg' title='Success' alt='Success' class='notification_icon' /> Your account has been created! &#128640;</div><div class='notification_progress'></div></figure>",
-                    "cssCode":".notification {position:absolute;bottom:4px;right:4px;width:max-content;border-radius:6px;background-color:#313e2c;color:#aaec8a;box-shadow: 0 1px 10px rgba(0,0,0,0.1);transform: translateY(30px);opacity:0;visibility: hidden; animation: fade-in 3s linear;} .notification_icon{height:26px;width:26px;margin-right: 4px;} .notification_body{display:flex; flex-direction: row; align-items: center; padding: 16px 8px;} .notification_progress{position:absolute; left:4px; bottom:4px; width: calc(100% - 8px); height: 3px; transform: scaleX(0); transform-origin: left; background: linear-gradient(to right, #313e2c, #aaec8a); border-radius: inherit; animation: progress 2.5s 0.3s linear;} @keyframes fade-in{5% {opacity: 1; visibility:visible;transform:translateY(0);}95%{opacity:1;transform:translateY(0);}} @keyframes progress {to{transform: scaleX(1);}}"
+                    "cssCode":".notification {position:absolute;padding:5px;height:50px;bottom:4px;right:4px;width:max-content;border-radius:6px;background-color:#313e2c;color:#aaec8a;box-shadow: 0 1px 10px rgba(0,0,0,0.1);transform: translateY(30px);opacity:0;visibility: hidden; animation: fade-in 3s linear;} .notification_icon{height:26px;width:26px;margin-right: 4px;} .notification_body{display:flex; flex-direction: row; align-items: center; padding: 16px 8px;} .notification_progress{position:absolute; left:4px; bottom:4px; width: calc(100% - 8px); height: 3px; transform: scaleX(0); transform-origin: left; background: linear-gradient(to right, #313e2c, #aaec8a); border-radius: inherit; animation: progress 2.5s 0.3s linear;} @keyframes fade-in{5% {opacity: 1; visibility:visible;transform:translateY(0);}95%{opacity:1;transform:translateY(0);}} @keyframes progress {to{transform: scaleX(1);}}"
+                },
+                {
+                    "id":"2",
+                    "htmlCode":"<div class='clipboard'><p class='clipboard__text'>Clipboard</p></div>",
+                    "cssCode":".clipboard{border: 0.5px solid black;color: white;background: rgb(156, 255, 7);border-radius: 10px;position:absolute;bottom: 4px;right:4px;z-index: 1;animation: fade-in 3s linear;}@keyframes fade-in{5% {opacity: 1; visibility:visible;transform:translateY(0);}95%{opacity:1;transform:translateY(0);}} @keyframes progress {to{transform: scaleX(1);}}"
                 }
             ]
         }

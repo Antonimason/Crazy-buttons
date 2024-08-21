@@ -1,12 +1,11 @@
 import React from 'react';
+import CodeLog from "../../Kit/CodeLog";
 import { useSelector, useDispatch } from 'react-redux';
 import {forward, backward} from '../../Redux/CarouselRedux'
-import {copy, clipboards} from '../../Redux/CopyCode'
 import './Carousel.css';
 import myJson from '../../Redux/buttons.json';
 import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
-import * as Formater from "../../Kit/Formater"
+import { IoIosArrowForward } from "react-icons/io";;
 
 function Carousel(){
     const dispatch = useDispatch();
@@ -14,31 +13,6 @@ function Carousel(){
     const info = myJson.carousel[0].slides[counter];
     const code = myJson.carousel[0].slidesCode[0];
     const code2 = myJson.carousel[0].slidesCode[1];
-
-    const showLanguageContainer = (key, carouselContainer) =>{
-        let htmlContainer = carouselContainer.querySelector('.html');
-        let cssContainer = carouselContainer.querySelector('.css');
-        let jsContainer = carouselContainer.querySelector('.js');
-        switch(key){
-            case "html":
-                htmlContainer.style.display = 'flex';
-                cssContainer.style.display = 'none';
-                jsContainer.style.display = 'none';
-                break;
-            case "css":
-                htmlContainer.style.display = 'none';
-                cssContainer.style.display = 'flex';
-                jsContainer.style.display = 'none';
-                break;
-            case "js":
-                htmlContainer.style.display = 'none';
-                cssContainer.style.display = 'none';
-                jsContainer.style.display = 'flex';
-                break;
-            default:
-                return;
-        }
-    }
 
 
 
@@ -59,29 +33,7 @@ function Carousel(){
                             <div className="forth button-carousel"><IoIosArrowForward className="forward" onClick={(e)=>{e.preventDefault();dispatch(forward(1))}}/></div>
                         </div>
                     </div>
-                    <div className="carousel-languageButtons">
-                        <button onClick={(e)=>showLanguageContainer("html",e.target.closest('.carousel-firstContent'))}>HTML</button>
-                        <button onClick={(e)=>showLanguageContainer("css",e.target.closest('.carousel-firstContent'))}>CSS</button>
-                        <button onClick={(e)=>showLanguageContainer("js",e.target.closest('.carousel-firstContent'))}>JavaScript</button>
-                    </div>
-                    <div className="carousel-htmlContainer html">
-                        <button onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(code.htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                        <pre><code className="language-css">
-                            {Formater.formatHTMLCode(code.htmlCode)};
-                        </code></pre>
-                    </div>
-                    <div className="carousel-htmlContainer css">
-                        <button onClick={(e)=>{dispatch(copy(Formater.formatCssCode(code.cssCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                        <pre><code className="language-css">
-                            {Formater.formatCssCode(code.cssCode)};
-                        </code></pre>
-                    </div>
-                    <div className="carousel-htmlContainer js">
-                        <button onClick={(e)=>{dispatch(copy(Formater.formatJavaScriptCode(code.jsCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                        <pre className="pre"><code className="language-css">
-                            {Formater.formatJavaScriptCode(code.jsCode)};
-                        </code></pre>
-                    </div>
+                    <CodeLog htmlCode={code.htmlCode} cssCode={code.cssCode} jsCode={code.jsCode} content={'.carousel-firstContent'}/>
                 </article>
 
             </section>
@@ -100,25 +52,8 @@ function Carousel(){
                         <div className="image"><span>eighth Slide</span></div>
                         <div className="image"><span>Ninth Slide</span></div>
                     </div>
-                    <div className="carousel-languageButtons margin-active">
-                        <button onClick={(e)=>showLanguageContainer("html",e.target.closest('.carousel-secondContent'))}>HTML</button>
-                        <button onClick={(e)=>showLanguageContainer("css",e.target.closest('.carousel-secondContent'))}>CSS</button>
-                        <button onClick={(e)=>showLanguageContainer("js",e.target.closest('.carousel-secondContent'))}>JavaScript</button>
-                    </div>
-                    <div className="carousel-htmlContainer html">
-                        <button onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(code2.htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                        <pre><code className="language-css">
-                            {Formater.formatHTMLCode(code2.htmlCode)};
-                        </code></pre>
-                    </div>
-                    <div className="carousel-htmlContainer css">
-                        <button onClick={(e)=>{dispatch(copy(Formater.formatCssCode(code2.cssCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                        <pre><code className="language-css">
-                            {Formater.formatCssCode(code2.cssCode)};
-                        </code></pre>
-                    </div>
-                    <div className="carousel-htmlContainer js">
-                    </div>
+                    <div className="spacer"></div>
+                    <CodeLog htmlCode={code2.htmlCode} cssCode={code2.cssCode} jsCode={false} content={'.carousel-secondContent'}/>
                 </article>
             </section>
         </>

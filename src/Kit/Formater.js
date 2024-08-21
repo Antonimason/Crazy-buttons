@@ -5,6 +5,8 @@ export function formatCssCode(text){
 
     formattedText = formattedText.replace(/}/g, '}\n\n');
 
+    formattedText = formattedText.replace(/;\n\s*$/g, ';');
+    
     return formattedText
 }
 
