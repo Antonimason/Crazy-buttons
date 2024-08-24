@@ -13,7 +13,8 @@ import YourButton from './Layouts/YourButton';
 import BuildButton from './Layouts/BuildButton';
 import Carousel from './Layouts/Carousel/Carousel';
 import Modal from './Layouts/Modal/Modal';
-
+import Card from './Layouts/Card/Card';
+import Loader from './Layouts/Loader/Loader';
 function App() {
   
   // Redux state selectors
@@ -35,6 +36,10 @@ function App() {
             return <Carousel />; // Render Carousel component if 'displayOn' state is 'Carousel'
         case 'Modal':
             return <Modal />; // Render Modal component if 'displayOn' state is 'Modal'
+        case 'Card':
+            return <Card />; // Render Modal component if 'displayOn' state is 'Modal'
+        case 'Loader':
+            return <Loader />; // Render Modal component if 'displayOn' state is 'Modal'
         default:
             return null; // Default case returns null
     }

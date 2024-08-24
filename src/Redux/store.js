@@ -2,7 +2,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 // Importing reducers for different slices of state
-import userReducer from './buttonSelection'; // Importing reducer for user selection
+import repository from './repositoryRedux'; // Importing reducer for user selection
 import sizeButton from './builtButton'; // Importing reducer for button size
 import createButton from './CrazyButton'; // Importing reducer for button creation
 import carousels from './CarouselRedux';
@@ -13,7 +13,7 @@ import modalRedux from './modalRedux';
 export const store = configureStore({
     reducer: {
         CreateButton: createButton, // Setting reducer for button creation slice of state
-        buttons: userReducer, // Setting reducer for user selection slice of state
+        repository: repository, // Setting reducer for user selection slice of state
         zise: sizeButton, // Setting reducer for button size slice of state
         carousel: carousels, // Setting reducer for carousel slice of staste
         copy: copyCode,

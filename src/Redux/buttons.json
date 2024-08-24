@@ -2,76 +2,117 @@
     "buttons":[{
             "id":"buttonAnimation1",
             "key":"1",
-            "styleCss":"#buttonAnimation1{font-size: 1.25em;color: #000;background-color: #1197cc;box-shadow: #094c66 4px 4px 0px;border-radius: 0.5rem;transition: transform 200ms, box-shadow 200ms;cursor: pointer;text-align: center;outline:none;border: none;height: 2.8125rem;margin: 1px 3px;padding: 0.652rem 1.25rem;}#buttonAnimation1:active{transform: translateY(4px) translateX(4px);box-shadow: #094c66 0px 0px 0px;}",
+            "htmlCode":"<button id='buttonAnimation1'>Click</button>",
+            "cssCode":"#buttonAnimation1{font-size: 1.25em;color: #000;background-color: #1197cc;box-shadow: #094c66 4px 4px 0px;border-radius: 0.5rem;transition: transform 200ms, box-shadow 200ms;cursor: pointer;text-align: center;outline:none;border: none;height: 2.8125rem;margin: 1px 3px;padding: 0.652rem 1.25rem;}#buttonAnimation1:active{transform: translateY(4px) translateX(4px);box-shadow: #094c66 0px 0px 0px;}",
             "model":"3d"
         },
         {
             "id":"buttonAnimation2",
             "key":"2",
-            "styleCss":"#buttonAnimation2{font-size: 1.2em;padding: 1.2rem;background:transparent;color: #2e2e2e;border: none;border-radius: 50%;box-shadow: 5px 5px 10px -3px #0000047f, -5px -5px 15px 3px #ffffff89;cursor:pointer;}#buttonAnimation2:active {box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;}",
-            "model":"minimalist"
+            "htmlCode":"<button id='buttonAnimation2'>Click</button>",
+            "cssCode":"#buttonAnimation2{font-size: 1.2em;padding: 1.2rem;background:transparent;color: #2e2e2e;border: none;border-radius: 50%;box-shadow: 5px 5px 10px -3px #0000047f, -5px -5px 15px 3px #ffffff89;cursor:pointer;}#buttonAnimation2:active {box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;}",
+            "model":"3d"
         },
         {
             "id":"buttonAnimation3",
             "key":"3",
-            "styleCss":"#buttonAnimation3{font-size:1.2em;padding:0.9rem 1.8rem;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:10px;background:#111827;cursor:pointer;color:white;}#buttonAnimation3::after{content:'';height:calc(100% + 10px);width:calc(100% + 10px);position:absolute;top:-5px;left:-5px;z-index:-1;border-radius:10px;background:linear-gradient(90deg,deeppink,deepskyblue,lawngreen,deeppink);background-size:300% 100%;animation: animate 3s ease infinite;}@keyframes animate{to{background-position:0% 0%;}50%{background-position:90% 0%;}100%{background-position:0% 0%;}}",
+            "htmlCode":"<button id='buttonAnimation3'>Click</button>",
+            "cssCode":"#buttonAnimation3{font-size:1.2em;padding:0.9rem 1.8rem;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:10px;background:#111827;cursor:pointer;color:white;}#buttonAnimation3::after{content:'';height:calc(100% + 10px);width:calc(100% + 10px);position:absolute;top:-5px;left:-5px;z-index:-1;border-radius:10px;background:linear-gradient(90deg,deeppink,deepskyblue,lawngreen,deeppink);background-size:300% 100%;animation: animate 3s ease infinite;}@keyframes animate{to{background-position:0% 0%;}50%{background-position:90% 0%;}100%{background-position:0% 0%;}}",
             "model":"2d"
         },
         {
             "id":"buttonAnimation4",
             "key":"4",
-            "styleCss":"#buttonAnimation4{font-size:1.2em;cursor:pointer;padding: 1rem;background-color:white;border-radius:0.25rem;border:0.125rem solid #121212;box-shadow: 0.25rem 0.25rem #121212;transition: 50ms, box-shadow 50ms;&&:active{transform:translate(0.125rem, 0.125rem);box-shadow: 0.125rem 0.125rem #121212}",
+            "htmlCode":"<button id='buttonAnimation4'>Click</button>",
+            "cssCode":"#buttonAnimation4{font-size:1.2em;cursor:pointer;padding: 1rem;background-color:white;border-radius:0.25rem;border:0.125rem solid #121212;box-shadow: 0.25rem 0.25rem #121212;transition: 50ms, box-shadow 50ms;&&:active{transform:translate(0.125rem, 0.125rem);box-shadow: 0.125rem 0.125rem #121212}",
             "model":"3d"
         },
         {
             "id":"buttonAnimation5",
             "key":"5",
-            "styleCss":"#buttonAnimation5{background-color:#000000; color:#f26f2e;border:2px solid;transition:0.7s  ease-in-out;width:75px;font-size:1.2em;height:40px;cursor:pointer;position:relative; &&:hover{color:#ffffff;border-color:#e6fc6a;box-shadow:0 0.8em 0.5em -0.4em #e6fc6a;transform:translateY(-0.35em);}}",
+            "htmlCode":"<button id='buttonAnimation5'>Click</button>",
+            "cssCode":"#buttonAnimation5{background-color:#000000; color:#f26f2e;border:2px solid;transition:0.7s  ease-in-out;width:75px;font-size:1.2em;height:40px;cursor:pointer;position:relative; &&:hover{color:#ffffff;border-color:#e6fc6a;box-shadow:0 0.8em 0.5em -0.4em #e6fc6a;transform:translateY(-0.35em);}}",
             "model":"hover"
         },
         {
             "id":"buttonAnimation6",
             "key":"6",
-            "styleCss":"#buttonAnimation6{width:100px;height:40px;font-size:1.2em;cursor:pointer;background-color:#171717;color:#ffffff;border:none;transition:all .4s; &&:hover{border-radius:5px;transform:translateY(-10px);box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db, 0 16px 10px -3px #39a2db}}",
+            "htmlCode":"<button id='buttonAnimation6'>Click</button>",
+            "cssCode":"#buttonAnimation6{width:100px;height:40px;font-size:1.2em;cursor:pointer;background-color:#171717;color:#ffffff;border:none;transition:all .4s; &&:hover{border-radius:5px;transform:translateY(-10px);box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db, 0 16px 10px -3px #39a2db}}",
             "model":"hover"
         },
         {
             "id":"buttonAnimation7",
             "key":"7",
-            "styleCss":"#buttonAnimation7{background:none;border:1px solid #7864f4;color:7864f4;padding:20px 25px;cursor:pointer;outline:none;position:relative;animation:all 1s;overflow:hidden;border-radius:10px;font-weight:bold;&&:before{content: '';position:absolute;top:0;left:0;background: linear-gradient(#7864f4,#3072d3);width:100%;transition:all 0.3s;z-index: -1;transform:rotate(-90deg);transform-origin:bottom left;height:100%;}&&:hover{color:#fff}&&:hover:before{transform:rotate(0);}}",
+            "htmlCode":"<button id='buttonAnimation7'>Click</button>",
+            "cssCode":"#buttonAnimation7{background:none;border:1px solid #7864f4;color:7864f4;padding:20px 25px;cursor:pointer;outline:none;position:relative;animation:all 1s;overflow:hidden;border-radius:10px;font-weight:bold;&&:before{content: '';position:absolute;top:0;left:0;background: linear-gradient(#7864f4,#3072d3);width:100%;transition:all 0.3s;z-index: -1;transform:rotate(-90deg);transform-origin:bottom left;height:100%;}&&:hover{color:#fff}&&:hover:before{transform:rotate(0);}}",
             "model":"hover"
         },
         {
             "id":"buttonAnimation8",
             "key":"8",
-            "styleCss":"#buttonAnimation8{padding:20px 25px;background-color:#050801;color:#03e9f4;font-weight:bold;border:none;border-radius:5px;letter-spacing:4px;overflow:hidden;transition:0.5s;cursor:pointer;&&:hover{background-color:#03e9f4;color:#050801;box-shadow:0 0 5px #03e9f4, 0 0 25px #03e9f4; 0 0 50px #03e9f4, 0 0 100px #03e9f4;-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);}}",
+            "htmlCode":"<button id='buttonAnimation8'>Click</button>",
+            "cssCode":"#buttonAnimation8{padding:20px 25px;background-color:#050801;color:#03e9f4;font-weight:bold;border:none;border-radius:5px;letter-spacing:4px;overflow:hidden;transition:0.5s;cursor:pointer;&&:hover{background-color:#03e9f4;color:#050801;box-shadow:0 0 5px #03e9f4, 0 0 25px #03e9f4; 0 0 50px #03e9f4, 0 0 100px #03e9f4;-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);}}",
             "model":"hover"
         },
         {
             "id":"buttonAnimation9",
             "key":"9",
-            "styleCss":"#buttonAnimation9{cursor:pointer;background:transparent;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);margin:0 auto;border:none;font-size:20px;padding:15px 30px;color:#000;} #buttonAnimation9::before, #buttonAnimation9::after{content:'';width:100%;height:100%;position:absolute;top:0;left:0;box-sizing:border-box;transition: top 0.5s, left 0.5s}#buttonAnimation9::before{border-left:2px solid #f4005c;border-top:2px solid #f4005c;}#buttonAnimation9::after{border-right:2px solid #f4005c;border-bottom:2px solid #f4005c;}#buttonAnimation9:hover::before{top:-4px;left:-10px}#buttonAnimation9:hover::after{top:4px;left:10px}",
+            "htmlCode":"<button id='buttonAnimation9'>Click</button>",
+            "cssCode":"#buttonAnimation9{cursor:pointer;background:transparent;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);margin:0 auto;border:none;font-size:20px;padding:15px 30px;color:#000;} #buttonAnimation9::before, #buttonAnimation9::after{content:'';width:100%;height:100%;position:absolute;top:0;left:0;box-sizing:border-box;transition: top 0.5s, left 0.5s}#buttonAnimation9::before{border-left:2px solid #f4005c;border-top:2px solid #f4005c;}#buttonAnimation9::after{border-right:2px solid #f4005c;border-bottom:2px solid #f4005c;}#buttonAnimation9:hover::before{top:-4px;left:-10px}#buttonAnimation9:hover::after{top:4px;left:10px}",
             "model":"hover"
         },
         {
             "id":"buttonAnimation10",
             "key":"10",
-            "styleCss":"#buttonAnimation10{position:relative;width:100px;height:40px;font-size:1.2em;border:none;outline:none;background:transparent;text-transform:uppercase;letter-spacing:2px;cursor:pointer;}#buttonAnimation10::before,#buttonAnimation10::after{content:'';position:absolute;width:20px;height:20px;border:2px solid #121212;border-top:transparent;transition:.4s;border-right:transparent;box-sizing:border-box}#buttonAnimation10::before{bottom:0;left:0;}#buttonAnimation10::after{top:0;right:0;transform:rotate(180deg);}#buttonAnimation10:hover::before,#buttonAnimation10:hover::after{width:100%;height:100%;}",
+            "htmlCode":"<button id='buttonAnimation10'>Click</button>",
+            "cssCode":"#buttonAnimation10{position:relative;width:100px;height:40px;font-size:1.2em;border:none;outline:none;background:transparent;text-transform:uppercase;letter-spacing:2px;cursor:pointer;}#buttonAnimation10::before,#buttonAnimation10::after{content:'';position:absolute;width:20px;height:20px;border:2px solid #121212;border-top:transparent;transition:.4s;border-right:transparent;box-sizing:border-box}#buttonAnimation10::before{bottom:0;left:0;}#buttonAnimation10::after{top:0;right:0;transform:rotate(180deg);}#buttonAnimation10:hover::before,#buttonAnimation10:hover::after{width:100%;height:100%;}",
             "model":"hover"
         },
         {
             "id":"buttonAnimation11",
-            "key":"10",
-            "styleCss":"#buttonAnimation10{position:relative;width:100px;height:40px;font-size:1.2em;border:none;outline:none;background:transparent;text-transform:uppercase;letter-spacing:2px;cursor:pointer;}#buttonAnimation10::before,#buttonAnimation10::after{content:'';position:absolute;width:20px;height:20px;border:2px solid #121212;border-top:transparent;transition:.4s;border-right:transparent;box-sizing:border-box}#buttonAnimation10::before{bottom:0;left:0;}#buttonAnimation10::after{top:0;right:0;transform:rotate(180deg);}#buttonAnimation10:hover::before,#buttonAnimation10:hover::after{width:100%;height:100%;}",
+            "key":"11",
+            "htmlCode":"<button id='button11'>Hover me</button>",
+            "cssCode":"#button11{background-color: rgb(255,81,119);color:white;padding: 0.5rem 1rem;font-size: large;border:none;border-radius: 5px;cursor:pointer;background-image: linear-gradient(-60deg, #ffffff00 0%,#ffffff00 40%,#ffffff44 40%,#ffffff44 60%,#ffffff00 60%,#ffffff00 100%);background-size: 200% 100%;background-position-x: 150%;transition: scale 0.5s;}#button11:hover{animation: shimmer 1s forwards;scale:1.1;}@keyframes shimmer{0%{background-position-x: 150%;}100%{background-position-x: -50%;}}",
             "model":"hover"
+        },
+        {
+            "id":"buttonAnimation12",
+            "key":"12",
+            "htmlCode":"<button id='button12'><span id='button12-text'>Download</span><i id='button12-download'>Downloading</i></button>",
+            "cssCode":"#button12{position:relative;display:flex;flex-direction:column;align-items:center;font-size:20px;background:#2e3715;color:white;border-radius: 15px 15px 15px 15px;border:none;width:140px;height:40px;overflow:hidden;cursor:pointer;transition: background-color: 0.8s;}#button12:hover{background:#afddcc;color:black;transition: background 0.8s;}#button12-text{position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);transition: all 0.8s;}#button12-download{position:absolute;top:200%;left:50%;transform: translate(-50%,-50%);transition: all 0.8s;}#button12:hover #button12-download{top:50%;}#button12:hover #button12-text{top:-200%;}",
+            "model": "hover"
+        },
+        {
+            "id":"buttonAnimation13",
+            "key":"13",
+            "htmlCode":"<button id='button13'><div id='button13-box'><span id='button13-span'></span><a id='button13-anchor' href=''#''>Click</a></div></button>",
+            "cssCode":"#button13{border:0;cursor:pointer;position:relative;}#button13-box{background-color: rgb(255,70,85);padding:0.5rem 2rem; position:relative;overflow:hidden;}#button13-anchor{position:relative;text-decoration:none;font-size:1.4rem;font-weight:700;color:#ece8e1;text-transform:uppercase;z-index:1;}#button13::before, #button13::after{content: '';position: absolute;width: 105%;height:50%;background-color: transparent;border: 1px solid rgb(134,129,124);left:-3%;z-index: -1;}#button13::before{border-bottom: 0;top:-10%;}#button13::after{border-top: 0;bottom:-10%;}#button13-span{position:absolute;top:0;left:0;width:120%;height:110%;background-color:#2c303d;transform:translateX(-105%) skew(-10deg);transition: 0.8s ease;}#button13:hover #button13-span{transform: translateX(-5%) skew(-10deg);}",
+            "model":"hover"
+        }
+    ],
+    "loaders":[
+        {
+            "id":"1",
+            "htmlCode":"<div class='loader1'><div class='loader1-bar'></div><div class='loader1-bar'></div><div class='loader1-bar'></div><div class='loader1-bar'></div><div class='loader1-bar'></div></div>",
+            "cssCode":".loader1{display:flex;justify-content: space-between;align-items:center;gap:8px;width:60px;height:40px;}.loader1-bar{height:40px;display:flex;width:10px;height:6px;border-radius:8px;background:orange;animation: audio-wave 2.2s infinite ease-in-out;}.loader1-bar:nth-child(2){left:11px;animation-delay: 0.2s;}.loader1-bar:nth-child(3){left:22px;animation-delay:0.4s;}.loader1-bar:nth-child(4){left:33px;animation-delay: 0.6s;}.loader1-bar:nth-child(5){left:44x;animation-delay: 0.8s;}.loader1-bar:nth-child(5){left:55px;animation-delay: 1s;}@keyframes audio-wave{0%{height: 6px;transform: translateY(0px);background: #ff8e3a;}25%{height: 40px;transform: translateY(-5px) scaleY(1.7);background: #ed509e;}50%{height: 6px;transform: translateY(0px);background: #9c73f8;}100%{height: 6px;transform: translateY(0px);background: #0fccce;}}"
         }
     ],
     "cards":[
         {
-            "id":"card1",
-            "key":"1",
-            "styleCss":".card-container{width: 70%;height: 15rem;display:flex;justify-content: center;align-items: center;flex-wrap: wrap;gap: 0;border: 2px solid;border-color: #31acff;box-shadow: rgba(92, 240, 248, 0.6) 0px 0px 12px 1.2px;backdrop-filter: blur(10px);border-radius: 1.25rem;margin: 0 7px;}.card-logo{width: 100%;padding: 10px;font-size: 1.6em;display:flex;justify-content: center;align-items: center;color: white;}.card-text-container{width:100%;height: 8rem;text-align: center;color: white;}.card-title{display: block;padding: 0 0 1rem 0;font-size: 0.8rem;}.card-paragraph{font-size: 0.7em;padding:0 1rem;}@media only screen and (min-width:512px) {.card-container{width: 16rem;}}@media only screen and (min-width: 794px){.card-title{font-size: 1.1em;}.card-logo{font-size: 2.5em;}.card-paragraph{font-size: 0.7em;}}@media only screen and (min-width:1024px) {.card-container{width: 17rem;height: 17rem;}.card-title{font-size: 1.2em;}.card-text-container{height: 10rem;}.card-logo{font-size: 3em;}.card-paragraph{font-size: 0.7em;padding: 0 2rem;}}",
-            "htmlCode":"<div className='card-container'><div className='card-logo'>{props.logo}</div><div className='card-text-container'><h3 className='card-title title'>Title</h3><p className='card-paragraph text'>Description</p></div></div>"
+            "id":"1",
+            "htmlCode":"<div className='card-container'><div className='card-logo'>{props.logo}</div><div className='card-text-container'><h3 className='card-title title'>Title</h3><p className='card-paragraph text'>Description</p></div></div>",
+            "styleCss":".card-container{width: 70%;height: 15rem;display:flex;justify-content: center;align-items: center;flex-wrap: wrap;gap: 0;border: 2px solid;border-color: #31acff;box-shadow: rgba(92, 240, 248, 0.6) 0px 0px 12px 1.2px;backdrop-filter: blur(10px);border-radius: 1.25rem;margin: 0 7px;}.card-logo{width: 100%;padding: 10px;font-size: 1.6em;display:flex;justify-content: center;align-items: center;color: white;}.card-text-container{width:100%;height: 8rem;text-align: center;color: white;}.card-title{display: block;padding: 0 0 1rem 0;font-size: 0.8rem;}.card-paragraph{font-size: 0.7em;padding:0 1rem;}@media only screen and (min-width:512px) {.card-container{width: 16rem;}}@media only screen and (min-width: 794px){.card-title{font-size: 1.1em;}.card-logo{font-size: 2.5em;}.card-paragraph{font-size: 0.7em;}}@media only screen and (min-width:1024px) {.card-container{width: 17rem;height: 17rem;}.card-title{font-size: 1.2em;}.card-text-container{height: 10rem;}.card-logo{font-size: 3em;}.card-paragraph{font-size: 0.7em;padding: 0 2rem;}}"
+        },
+        {
+            "id":"2",
+            "htmlCode":"<div class='wrapper'><img class='wrapper-image' src='https://tse2.mm.bing.net/th/id/OIP.5gkuwPoFWE4GbRBaxNs1rQHaJQ?rs=1&pid=ImgDetMain' alt='image'/><span class='wrapper-title'>Arthur Shelby</span></div>",
+            "cssCode":".wrapper{border-radius:15px;box-shadow: 0 0 10px rgba(0,0,0,0.1);width: 300px;htight: 300px;overflow: hidden;cursor: pointer;position: relative;}.wrapper-image{width: 100%;height:100%;object-fit: cover;transition: all 0.5s ease-in-out;}.wrapper-image:hover{transform: scale(1.4);filter:blur(5px);}.wrapper:hover .wrapper-title{opacity:1;}.wrapper-title{opacity: 0;border-radius: 5px;background: rgba(219,217,217,0.368);padding: 15px;position:absolute;color:black;bottom:40px;left: 4px;right: 4px;font-size: 23px;font-weight: 600;text-align:center;margin-top:10px;transition: opacity 0.5 ease-in-out;}"
+        },
+        {
+            "id":"3",
+            "htmlCode":"<div class='card2'><div class='image-box2'><img class='image-box2-img' src='https://tse4.mm.bing.net/th/id/OIP.LXRxIS3syIzEQPdlQsonnwHaNL?rs=1&pid=ImgDetMain' alt='Tommy Shelby'</div><div class='text-box2'><div class='main-card2'><span class='name-card2'>Tommy Shelby</span></div><div class='sub-card2'><span class='address-card2'>@ShelbyCompany</span></div></div></div>",
+            "cssCode":".card2{width:300px;aspect-radio: 1/1.3;position:relative;}.image-box2{width:100%;height:100%;overflow:hidden;}.image-box2-img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(0) birghtness(1);scale: 1.2;transition:scale 2s ease-in-out, filter 1s ease-in-out;}.image-box2-img:hover{filter:grayscale(1) brightness(0.7);scale: 1;}.text-box2{position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);text-align:center;color:white;}.text-box2 :is(.main-card2, .sub-card2){height: 34px;line-height: 34px;overflow:hidden;}.main-card2{font-size: 18px;font-weight: 600;text-transform: uppercase;position:relative;}.sub-card2{font-size:14px;font-weight:300;}.name-card2, .address-card2{display:block;transition: transform 0.5 ease;}.name-card2{transition-delay: 0.2s;transform: translateY(100%);}.address-card2{transform: translateY(-100%);transition-delay: 0.5s}.card2:hover .text-box2 :is(span){transform: translateY(0%);}.text-box2::after{position:absolute;content:'';top: 52%;left:50%;width: 180%;height: 3px;transform: translate(-50%,-50%) scaleX(0);transform-origin: left;transition: 0.5 ease;background-color: cyan;}.card2:hover .text-box2::after{transform: translate(-50%,-50%) scaleX(1);}"
         }
     ],
     "carousel":[

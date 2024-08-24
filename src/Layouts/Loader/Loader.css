@@ -1,0 +1,21 @@
+.loader-container{
+    width: 100%;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    place-items:center;
+    margin-top: 6vh;
+    padding: 2rem;
+    min-height: 94vh;
+}
+
+.loader__show{
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap:wrap;
+}
