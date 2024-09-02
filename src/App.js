@@ -13,7 +13,7 @@ import YourButton from './Layouts/YourButton';
 import BuildButton from './Layouts/BuildButton';
 import Carousel from './Layouts/Carousel/Carousel';
 import Modal from './Layouts/Modal/Modal';
-import Card from './Layouts/Card/Card';
+import Card from './Layouts/Card/CardLayout';
 import Loader from './Layouts/Loader/Loader';
 function App() {
   

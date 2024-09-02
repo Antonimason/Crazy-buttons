@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
-import CodeLog from '../../Kit/CodeLog'
 import './Modal.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateModalContent, modalStyle } from '../../Redux/modalRedux';
+import { updateModalContent} from '../../Redux/modalRedux';
+import {active, contentProvider} from '../../Redux/codeLogRedux';
 import buttonList from '../../Redux/buttons.json';
 
 function Modal() {
 
     const dispatch = useDispatch();
     const modal = useSelector(state=> state.modals.modalShown);
-    const modalCss = useSelector(state=> state.modals.modal_style);
     const code = buttonList.modal[0].modalCode[0]
     const code_2 = buttonList.modal[0].modalCode[1]
 
@@ -54,8 +53,15 @@ function Modal() {
                         <p className="modal-text">This is a Modal box</p>
                         <button className="modal-button" onClick={()=>{
                             showModal(0)}}>Try Yourself</button>
+                        <button className="modal-button" onClick={e=>{
+                        e.preventDefault();
+                        dispatch(active(true));
+                        dispatch(contentProvider({
+                            htmlCode:code.htmlCode,
+                            cssCode:code.cssCode,
+                            jsCode:false
+                            }))}}>Get Code</button>
                     </div>
-                    <CodeLog htmlCode={code.htmlCode} cssCode={code.cssCode} jsCode={false} content={'.model_1'}/>
                 </article>
                 <article className="modal-model model_2">
                     <h3>Modal model : 2</h3>
@@ -63,8 +69,15 @@ function Modal() {
                         <p className="modal-text">This is a Modal box</p>
                         <button className="modal-button" onClick={()=>{
                             showModal(1)}}>Try Yourself</button>
+                            <button className="modal-button" onClick={e=>{
+                        e.preventDefault();
+                        dispatch(active(true));
+                        dispatch(contentProvider({
+                            htmlCode:code_2.htmlCode,
+                            cssCode:code_2.cssCode,
+                            jsCode:false
+                            }))}}>Get Code</button>
                     </div>
-                    <CodeLog htmlCode={code_2.htmlCode} cssCode={code_2.cssCode} jsCode={false} content={'.model_2'}/>
                 </article>
                 <article className="modal-model">
                     <h3>Modal model : 3</h3>

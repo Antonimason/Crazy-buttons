@@ -1,64 +1,62 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {copy, clipboards} from '../Redux/CopyCode'
+import {languaje, active} from '../Redux/codeLogRedux'
 import './codeLog.css'
 import * as Formater from'./Formater'
 
 function CodeLog(props) {
 
-    const {htmlCode,cssCode,jsCode,content} = props
+    const {htmlCode,cssCode,jsCode} = props
     const dispatch = useDispatch();
-
-    const showLanguageContainer = (key, carouselContainer) =>{
-        console.log(carouselContainer);
-        let htmlContainer = carouselContainer.querySelector('.html');
-        let cssContainer = carouselContainer.querySelector('.css');
-        let jsContainer = carouselContainer.querySelector('.js');
-        switch(key){
-            case "html":
-                htmlContainer.style.display = 'flex';
-                cssContainer.style.display = 'none';
-                jsContainer.style.display = 'none';
-                break;
-            case "css":
-                htmlContainer.style.display = 'none';
-                cssContainer.style.display = 'flex';
-                jsContainer.style.display = 'none';
-                break;
-            case "js":
-                htmlContainer.style.display = 'none';
-                cssContainer.style.display = 'none';
-                jsContainer.style.display = 'flex';
-                break;
-            default:
-                return;
-        }
-    }
+    const languajeShown = useSelector(state => state.codeLogRedux.languajeSelected)
+    console.log(cssCode)
 
     return(
         <>
-            <div className="carousel-languageButtons">
-                <button className="buttonAnimation" onClick={(e)=>showLanguageContainer("html",e.target.closest(content))}>HTML</button>
-                <button className="buttonAnimation" onClick={(e)=>showLanguageContainer("css",e.target.closest(content))}>CSS</button>
-                <button className="buttonAnimation" onClick={(e)=>showLanguageContainer("js",e.target.closest(content))}>JavaScript</button>
-            </div>
-            <div className="carousel-htmlContainer html">
-                <button onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                <pre><code className="language-css">
-                    {Formater.formatHTMLCode(htmlCode)};
-                </code></pre>
-            </div>
-            <div className="carousel-htmlContainer css">
-                <button onClick={(e)=>{dispatch(copy(Formater.formatCssCode(cssCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                <pre><code className="language-css">
-                    {Formater.formatCssCode(cssCode)};
-                </code></pre>
-            </div>
-            <div className="carousel-htmlContainer js">
-                <button onClick={(e)=>{dispatch(copy(Formater.formatJavaScriptCode(jsCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
-                <pre className="pre"><code className="language-css">
-                    {jsCode !== false ? Formater.formatJavaScriptCode(jsCode) : false};
-                </code></pre>
+            <div className="codeLog-container">
+                <div className="codeLog-box">
+                    <div className="carousel-languageButtons">
+                        <div className="codeLog-button-container">
+                            <button className="mainButton" onClick={(e)=>{dispatch(languaje("html"))}}>HTML</button>
+                            <button className="mainButton" onClick={(e)=>{dispatch(languaje("css"))}}>CSS</button>
+                            <button className="mainButton" onClick={(e)=>{dispatch(languaje("js"))}}>JavaScript</button>
+                        </div>
+                        <div className="codeLog-button-container">
+                            <button className="mainButton" onClick={(e)=>{dispatch(active(false));dispatch(languaje("html"))}}>Close</button>
+                        </div>
+                    </div>
+                    {languajeShown === "html" && (
+                        <div className="carousel-htmlContainer html">
+                            <div className="codeLog-copy-container">
+                            <button className="mainButton copyButton" onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                            </div>
+                            <pre><code className="language-css">
+                                {Formater.formatHTMLCode(htmlCode)};
+                            </code></pre>
+                        </div>
+                    )
+
+                    }
+                    {languajeShown === "css" && (<div className="carousel-htmlContainer css">
+                        <div className="codeLog-copy-container">
+                            <button className="mainButton copyButton" onClick={(e)=>{dispatch(copy(Formater.formatCssCode(cssCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                        </div>
+                        <pre><code className="language-css">
+                            {Formater.formatCssCode(cssCode)};
+                        </code></pre>
+                    </div>)}
+                    {languajeShown === "js" && (
+                        <div className="carousel-htmlContainer js">
+                            <div className="codeLog-copy-container">
+                                <button className="mainButton copyButton" onClick={(e)=>{dispatch(copy(Formater.formatJavaScriptCode(jsCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                            </div>
+                            <pre className="pre"><code className="language-css">
+                                {jsCode !== false ? Formater.formatJavaScriptCode(jsCode) : false};
+                            </code></pre>
+                    </div>
+                    )}
+                </div>
             </div>
         </>
     )

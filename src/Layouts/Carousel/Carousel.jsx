@@ -5,7 +5,8 @@ import {forward, backward} from '../../Redux/CarouselRedux'
 import './Carousel.css';
 import myJson from '../../Redux/buttons.json';
 import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";;
+import { IoIosArrowForward } from "react-icons/io";
+import {active, contentProvider} from '../../Redux/codeLogRedux';
 
 function Carousel(){
     const dispatch = useDispatch();
@@ -13,7 +14,6 @@ function Carousel(){
     const info = myJson.carousel[0].slides[counter];
     const code = myJson.carousel[0].slidesCode[0];
     const code2 = myJson.carousel[0].slidesCode[1];
-
 
 
       //-------------------Fuction to change forward the carousel images every 7 seconds-------------------//
@@ -33,7 +33,14 @@ function Carousel(){
                             <div className="forth button-carousel"><IoIosArrowForward className="forward" onClick={(e)=>{e.preventDefault();dispatch(forward(1))}}/></div>
                         </div>
                     </div>
-                    <CodeLog htmlCode={code.htmlCode} cssCode={code.cssCode} jsCode={code.jsCode} content={'.carousel-firstContent'}/>
+                    <button className="carousel-button__isActive" onClick={e=>{
+                        e.preventDefault();
+                        dispatch(active(true));
+                        dispatch(contentProvider({
+                            htmlCode:code.htmlCode,
+                            cssCode:code.cssCode,
+                            jsCode:code.jsCode
+                            }))}}>Click</button>
                 </article>
 
             </section>
@@ -53,7 +60,14 @@ function Carousel(){
                         <div className="image"><span>Ninth Slide</span></div>
                     </div>
                     <div className="spacer"></div>
-                    <CodeLog htmlCode={code2.htmlCode} cssCode={code2.cssCode} jsCode={false} content={'.carousel-secondContent'}/>
+                    <button className="carousel-button__isActive" onClick={e=>{
+                        e.preventDefault();
+                        dispatch(active(true));
+                        dispatch(contentProvider({
+                            htmlCode:code2.htmlCode,
+                            cssCode:code2.cssCode,
+                            jsCode:code2.jsCode
+                            }))}}>Get Code</button>
                 </article>
             </section>
         </>

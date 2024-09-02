@@ -101,15 +101,6 @@
     background: rgba(186, 186, 186, 0.8);
     color: black;
   }
-  .carousel-htmlContainer, .carousel-secondContent-htmlContainer{
-    width: 100%;
-    height: 25rem;
-    border: 1px solid black;
-    flex-direction: column;
-    overflow-y: auto;  /* Solo activa scroll en el eje Y cuando sea necesario */
-    overflow-x: auto; /* Asegúrate de que no haya scroll horizontal innecesario */
-    padding: 1rem; 
-  }
 
   .carousel-secondContent{
     position:relative;
@@ -117,9 +108,14 @@
     margin:100px auto 0 auto;
     perspective:5000px;
   }
-  
+.carousel-button__isActive{
+    margin-top: 400px;
+    width: 100px;
+    height: 50px;
+  }
   .carousel{
     position:absolute;
+    scale: 0.32;
     top: 2rem;
     width:320px;
     height:100px;

@@ -9,6 +9,8 @@ export const buttonSelection = createSlice({
     initialState: {
         buttonList: buttonList.buttons, // Initial list of buttons loaded from buttons.json
         loaderList: buttonList.loaders,
+        carouselList: buttonList.carousel,
+        cardList: buttonList.cards,
         copied: false, // Initial state for copied property
         clipboard: false, // Initial state for clipboard property
     },

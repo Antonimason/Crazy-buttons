@@ -8,10 +8,12 @@ import createButton from './CrazyButton'; // Importing reducer for button creati
 import carousels from './CarouselRedux';
 import copyCode from './CopyCode';
 import modalRedux from './modalRedux';
+import codeLogRedux from "./codeLogRedux";
 
 // Configuring the Redux store with combined reducers
 export const store = configureStore({
     reducer: {
+        codeLogRedux: codeLogRedux,
         CreateButton: createButton, // Setting reducer for button creation slice of state
         repository: repository, // Setting reducer for user selection slice of state
         zise: sizeButton, // Setting reducer for button size slice of state

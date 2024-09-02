@@ -1,56 +1,125 @@
-.carousel-htmlContainer, .carousel-secondContent-htmlContainer{
-    width: 100%;
-    height: 25rem;
-    border: 1px solid black;
+.codeLog-container{
+  width:100%;
+  max-width: 100rem;
+  height: 94vh;
+  margin-top: 6vh;
+  z-index:2;
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  background: white;
+  
+}
+.codeLog-button{
+  width: 100px;
+  height: 30px;
+}
+.codeLog-box{
+    width: 90%;
+    background-color: rgb(250, 250, 250);
+    margin: 0 auto;
+    min-height: 25rem;
+    max-height: 90rem;
+    border: 1px solid #dbdbdb;
+    border-radius: .375em;
+    display:flex;
     flex-direction: column;
-    overflow-y: auto;  /* Solo activa scroll en el eje Y cuando sea necesario */
-    overflow-x: auto; /* Asegúrate de que no haya scroll horizontal innecesario */
     padding: 1rem; 
   }
 .carousel-languageButtons{
-    margin: 30px;
+    margin: 30px 0;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
-  .css, .js{
-    display:none;
-  }
-
+.copyButton{
+  display: block;
+  background: black;
+}
   .carousel-code{
     width: 100%;
   }
-  .pre{
+  pre{
     width: 100%;
   }
   .language-css{
     width: 100%;
     font-size: 0.7em;
+    
 
   }
   .margin-active{
     padding-top: 200px;
   }
+  .codeLog-copy-container{
+    width:100%;
+    height: 50px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
-  .buttonAnimation{
-    width:100px;
-    height:40px;
-    font-size:1.2em;
-    cursor:pointer;
-    background-color:#171717;
-    color:#ffffff;
-    border:none;
-    transition:all .4s;
-    border-radius: 10px;
-    margin: 0 5px;
-}
-.buttonAnimation:hover{
-    border-radius:5px;
-    transform:translateY(-10px);
-    box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db, 0 16px 10px -3px #39a2db}
-  
-  
+  .carousel-htmlContainer{
+    border: 1px solid #dbdbdb;
+    border-radius: .375em;
+    width: 100%;
+    height: 25rem;
+    flex-direction: column;
+    overflow-y: auto;  /* Solo activa scroll en el eje Y cuando sea necesario */
+    overflow-x: auto; /* Asegúrate de que no haya scroll horizontal innecesario */
+    padding: 1rem; 
+  }
+    .mainButton {
+      align-items: center;
+      appearance: none;
+      background-color: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: .375em;
+      box-shadow: none;
+      box-sizing: border-box;
+      color: #363636;
+      cursor: pointer;
+      display: inline-flex;
+      font-size: 1rem;
+      height: 2.5em;
+      margin: 0 2px;
+      justify-content: center;
+      line-height: 1.5;
+      padding: calc(.5em - 1px) 1em;
+      position: relative;
+      text-align: center;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    
+    .mainButton:active {
+      border-color: #4a4a4a;
+      outline: 0;
+    }
+    
+    .mainButton:focus {
+      border-color: #485fc7;
+      outline: 0;
+    }
+    
+    .mainButton:hover {
+      border-color: #b5b5b5;
+    }
+    
+    .mainButton:focus:not(:active) {
+      box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+    }  
   
   
   @media  (width > 768px) {
     .language-css{
-      font-size: 0.8em;
+      font-size: 1.3em;
     }
   }

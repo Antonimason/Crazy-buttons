@@ -1,8 +1,7 @@
 import './Badge.css';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { copy, clipboards} from '../../Redux/CopyCode';
-import * as Formater from "../../Kit/Formater"
+import {active, contentProvider} from '../../Redux/codeLogRedux';
 
 function Badge(props){
 
@@ -16,7 +15,15 @@ function Badge(props){
                 </div>
 
                 <div className='badge-buttons'>
-                    <button className='badge-button' onClick={(e)=>{dispatch(copy(Formater.formatCssCode(props.button.props.stylefix)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
+                <button className="mainButton" onClick={e=>{
+                        e.preventDefault();
+                        dispatch(active(true));
+                        dispatch(contentProvider({
+                            htmlCode:props.button.props.htmlCode,
+                            cssCode:props.button.props.stylefix,
+                            jsCode:false
+                            }))}}>Get Code</button>
+                    
                 </div>
                 
             </div>
