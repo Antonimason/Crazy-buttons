@@ -19,48 +19,47 @@ function Carousel(){
       //-------------------Fuction to change forward the carousel images every 7 seconds-------------------//
     return(
         <>
+        <div className="carouselLayout-container">
             <section className="carousel-container">
-
+                <h3>Regular Carousel</h3>
                 <article className="carousel-firstContent carousel-content">
-                    <h3>Regular Carousel</h3>
                     <div className="carousel-firstConent-show">
-                        <div className="carrousel" id="container1">
+                        <div className="carrousel1" id="container1">
                             <div className="back button-carousel" ><IoIosArrowBack className="backward" onClick={(e)=>{e.preventDefault();dispatch(backward(1))}}/></div>
                             <div className="carrousel-image">
                                 <img className="picture" id={info.id} src={info.source} alt={info.name} />
-                                <h3 className="carousel-title">{info.name}</h3>
+                                <h4 className="carousel-title">{info.name}</h4>
                             </div>
                             <div className="forth button-carousel"><IoIosArrowForward className="forward" onClick={(e)=>{e.preventDefault();dispatch(forward(1))}}/></div>
                         </div>
                     </div>
-                    <button className="carousel-button__isActive" onClick={e=>{
+                </article>
+                <button className="mainButton" onClick={e=>{
                         e.preventDefault();
                         dispatch(active(true));
                         dispatch(contentProvider({
                             htmlCode:code.htmlCode,
                             cssCode:code.cssCode,
                             jsCode:code.jsCode
-                            }))}}>Click</button>
-                </article>
-
+                            }))}}>Get Code</button>         
             </section>
 
             <section className="carousel-container">
                 <h3>3D Rotating Carousel</h3>
                 <article className="carousel-secondContent carousel-content">
-                    <div className="carousel">
-                        <div className="image"><span>First Slide</span></div>
-                        <div className="image"><span>Second Slide</span></div>
-                        <div className="image"><span>Third Slide</span></div>
-                        <div className="image"><span>Fourth Slide</span></div>
-                        <div className="image"><span>Fifth Slide</span></div>
-                        <div className="image"><span>Sixth Slide</span></div>
-                        <div className="image"><span>Seventh Slide</span></div>
-                        <div className="image"><span>eighth Slide</span></div>
-                        <div className="image"><span>Ninth Slide</span></div>
+                    <div className="carousel2">
+                        <div className="carousel2-image"><span>First Slide</span></div>
+                        <div className="carousel2-image"><span>Second Slide</span></div>
+                        <div className="carousel2-image"><span>Third Slide</span></div>
+                        <div className="carousel2-image"><span>Fourth Slide</span></div>
+                        <div className="carousel2-image"><span>Fifth Slide</span></div>
+                        <div className="carousel2-image"><span>Sixth Slide</span></div>
+                        <div className="carousel2-image"><span>Seventh Slide</span></div>
+                        <div className="carousel2-image"><span>eighth Slide</span></div>
+                        <div className="carousel2-image"><span>Ninth Slide</span></div>
                     </div>
-                    <div className="spacer"></div>
-                    <button className="carousel-button__isActive" onClick={e=>{
+                </article>
+                <button className="mainButton" onClick={e=>{
                         e.preventDefault();
                         dispatch(active(true));
                         dispatch(contentProvider({
@@ -68,8 +67,8 @@ function Carousel(){
                             cssCode:code2.cssCode,
                             jsCode:code2.jsCode
                             }))}}>Get Code</button>
-                </article>
             </section>
+            </div>            
         </>
     )
 }
