@@ -17,7 +17,7 @@ function Modal() {
         if (modal) {
             showDynamicModal(modal);
         }
-    }, [modal]);
+    }, [modal,showDynamicModal]);
 
     const showModal = (modalId) =>{
         dispatch(updateModalContent(buttonList.modal[0].modalCode[modalId].htmlCode))
