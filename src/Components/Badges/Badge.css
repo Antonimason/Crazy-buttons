@@ -1,7 +1,7 @@
 .badge-container{
     width: 40%;
-    max-width: 200px;
-    height: 13rem;
+    max-width: 250px;
+    height: 15rem;
     display: flex;
     justify-content:space-evenly;
     align-items: center;
