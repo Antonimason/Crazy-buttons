@@ -1,13 +1,12 @@
 export function formatCssCode(text){
-    let formattedText = text.replace(/;/g, ';\n  ');
+    let formattedText = text
+        .replace(/(\/\*[\s\S]*?\*\/|\/\/[^\n]*)/g, match => match.replace(/\n\s*/g, '\n'))  // Limpiar comentarios
+        .replace(/(['"])(?:(?=(\\?))\2.)*?\1/g, match => match.replace(/\n/g, '\n  '))  // Manejar cadenas
+        .replace(/(\{|\}|;|,|\))/g, '$1\n')  // Añadir saltos de línea después de llaves, punto y coma, y paréntesis
+        .replace(/\n\s*\n/g, '\n\n')  // Limpiar saltos de línea dobles
+        .replace(/\n\s*;/g, ';');  // Eliminar saltos de línea antes de punto y coma
 
-    formattedText = formattedText.replace(/{/g, '{\n  ');
-
-    formattedText = formattedText.replace(/}/g, '}\n\n');
-
-    formattedText = formattedText.replace(/;\n\s*$/g, ';');
-    console.log(formattedText)
-    return formattedText
+    return formattedText.trim();
 }
 
 export function formatJavaScriptCode(text) {

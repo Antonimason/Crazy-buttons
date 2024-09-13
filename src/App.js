@@ -23,26 +23,23 @@ function App() {
   
   // Layout selector function.
   const ComponentToShow = () => {
-    switch (displayOn) {
-        case 'Home':
-            return <Home />; // Render Home component if 'displayOn' state is 'Home'
-        case 'Header':
-            return <Header />; // Render Header component if 'displayOn' state is 'Header'
-        case 'YourButton':
-            return <YourButton />; // Render YourButton component if 'displayOn' state is 'YourButton'
-        case 'BuildButton':
-            return <BuildButton />; // Render BuildButton component if 'displayOn' state is 'BuildButton'
-        case 'Carousel':
-            return <Carousel />; // Render Carousel component if 'displayOn' state is 'Carousel'
-        case 'Modal':
-            return <Modal />; // Render Modal component if 'displayOn' state is 'Modal'
-        case 'Card':
-            return <Card />; // Render Modal component if 'displayOn' state is 'Modal'
-        case 'Loader':
-            return <Loader />; // Render Modal component if 'displayOn' state is 'Modal'
-        default:
-            return null; // Default case returns null
+
+    const sections = {
+      'Home':<Home/>,
+      //'Header':<Header/>,
+      'YourButton':<YourButton/>,
+      'BuildButton':<BuildButton/>,
+      'Carousel':<Carousel/>,
+      'Modal':<Modal/>,
+      'Card':<Card/>,
+      'Loader':<Loader/>
     }
+
+    if (sections[displayOn]) {
+      return sections[displayOn];  // Retorna el componente correspondiente
+    }
+    return null;
+    
   };
 
   // Return Clipboard component if someone has copied any component

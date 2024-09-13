@@ -10,7 +10,7 @@ function CardContainer (props){
     <>
         <style>{stylefix}</style>
         <div className='createCardContainer-container'>
-            <div className="createCardContainer" dangerouslySetInnerHTML={{ __html: htmlCode }} />
+            <div key={keya} className="createCardContainer" dangerouslySetInnerHTML={{ __html: htmlCode }} />
             <div className='createCardContainer-author'>By {author}</div>
             <button className="mainButton" onClick={e=>{
                             e.preventDefault();

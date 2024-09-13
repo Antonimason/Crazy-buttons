@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import {active, contentProvider} from '../../Redux/codeLogRedux';
 import './CarouselContainer.css'
@@ -7,6 +7,21 @@ function CarouselContainer (props){
     const {keya, stylefix, htmlCode, jsCode, author, carouselName} = props;
 
     const dispatch = useDispatch();
+
+        useEffect(() => {
+            // Código JavaScript externo como una cadena
+            const script = jsCode;
+    
+            // Crear un elemento <script> y agregar el código
+            const scriptElement = document.createElement('script');
+            scriptElement.textContent = script;
+            document.body.appendChild(scriptElement);
+    
+            // Limpiar el elemento <script> después de desmontar el componente
+            return () => {
+                document.body.removeChild(scriptElement);
+            };
+        }, [jsCode]);
     return (
     <>
         <style>{stylefix}</style>
@@ -24,7 +39,6 @@ function CarouselContainer (props){
                                 jsCode:jsCode
                                 }))}}>Get Code</button> 
         </div>
-        {jsCode ? <script src={jsCode}></script> : null}
     </>
     )
 }

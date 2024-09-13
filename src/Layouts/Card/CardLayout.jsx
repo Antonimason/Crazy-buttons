@@ -14,7 +14,9 @@ function Card(){
             return (
             <CreateCard 
                     stylefix={item.cssCode} 
-                    htmlCode={item.htmlCode} // Pasar el htmlCode modificado
+                    htmlCode={item.htmlCode}
+                    jstCode={item.jsCode}
+                    author={item.author}
                     key={item.id} 
                     copied={"Copied!"}
             />
