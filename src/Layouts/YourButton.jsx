@@ -18,7 +18,8 @@ function YourButton() {
 
         return (
             <Badge 
-                key={items.key} 
+                key={items.key}
+                author={items.author} 
                 button={
                     <CreateButton 
                         stylefix={items.cssCode} 

@@ -15,6 +15,7 @@ function Badge(props){
                 </div>
 
                 <div className='badge-buttons'>
+                <div className='badge-author'>By {props.author}</div>
                 <button className="mainButton" onClick={e=>{
                         e.preventDefault();
                         dispatch(active(true));

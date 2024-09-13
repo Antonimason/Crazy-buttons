@@ -20,7 +20,9 @@ export const codeLogRedux = createSlice({
             if (state.isActive){
                 state.contentData.htmlCode = action.payload.htmlCode;
                 state.contentData.cssCode = action.payload.cssCode;
-                state.contentData.jsCode = action.payload.jsCode;
+                if(action.payload.jsCode){
+                    state.contentData.jsCode = action.payload.jsCode;
+                }
                 state.contentData.content = action.payload.content;
             }
         },

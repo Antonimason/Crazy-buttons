@@ -80,13 +80,27 @@
         height: 3.75rem;
     }
 }
-.createCardContainer{
+.createCardContainer-container{
     width: 100%;
     max-width: 25rem;
-    height: 30rem;
-    border-radius:20px;
+    height: 38rem;
+    border-radius:10px;
     display:flex;
+    gap: 10px;
     justify-content:center;
     align-items:center;
+    flex-direction: column;
     border: 1px solid rgba(0,0,0,0.3);
 }
+
+.createCardContainer{
+    height: 30rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createCardContainer-author{
+    font-size: 0.9rem;
+    color: rgb(176, 176, 176);
+  }

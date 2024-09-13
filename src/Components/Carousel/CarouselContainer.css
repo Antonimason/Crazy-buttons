@@ -1,0 +1,30 @@
+.carouselContainer-container {
+    padding: 20px;
+    width: 100%;
+    max-width: 45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  .carouselContainer {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 55rem;
+  }
+
+  @media (width>= 1440px){
+    .carouselContainer{
+        height: 300px;
+      }
+  }

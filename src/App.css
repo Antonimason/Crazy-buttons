@@ -45,7 +45,7 @@
   display: inline-flex;
   height: 2.5em;
   justify-content: center;
-  line-height: 1.5;
+  line-height: 1;
   padding: calc(.5em - 1px) 1em;
   position: relative;
   text-align: center;
@@ -73,3 +73,4 @@
 .mainButton:focus:not(:active) {
   box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
 }
+

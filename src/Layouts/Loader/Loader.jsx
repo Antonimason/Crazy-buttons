@@ -14,7 +14,8 @@ function Loader(){
             
             return (
                 <Badge 
-                    key={item.id} 
+                    key={item.id}
+                    author={item.author}
                     button={
                         <CreateButton 
                             stylefix={item.cssCode} 

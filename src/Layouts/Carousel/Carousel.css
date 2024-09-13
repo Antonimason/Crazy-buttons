@@ -6,13 +6,13 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 30px;
 }
 .carousel-container {
   padding: 20px;
   width: 100%;
-  max-width: 50rem;
+  max-width: 45rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -31,17 +31,9 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  max-width: 55rem;
+  max-width: 40rem;
 }
 
-@media (width >= 1440px){
-  .carouselLayout-container{
-    flex-direction:row;
-  }
-  .carousel-content{
-    height: 500px;
-  }
-}
 /*-----------------------First carousel---------------------*/
 
 .carrousel1 {
@@ -228,7 +220,13 @@
 }
 
 @media (width>= 1440px){
+  .carouselLayout-container{
+    flex-direction: row;
+  }
+  .carousel-content{
+    height: 300px;
+  }
   .carousel2 {
-    scale: 0.82;
+    scale: 0.72;
   }
 }

@@ -1,17 +1,20 @@
 import React from "react";
-import './Card.css'
 import { useDispatch } from 'react-redux';
 import {active, contentProvider} from '../../Redux/codeLogRedux';
-function CardContainer (props){
+import './CarouselContainer.css'
+function CarouselContainer (props){
 
-    const {keya, stylefix, htmlCode, jsCode, author} = props;
+    const {keya, stylefix, htmlCode, jsCode, author, carouselName} = props;
+
     const dispatch = useDispatch();
     return (
     <>
         <style>{stylefix}</style>
-        <div className='createCardContainer-container'>
-            <div className="createCardContainer" dangerouslySetInnerHTML={{ __html: htmlCode }} />
-            <div className='createCardContainer-author'>By {author}</div>
+        <div className='carouselContainer-container'>
+            <h3>{carouselName}</h3>
+            <div key={keya} className="carouselContainer" dangerouslySetInnerHTML={{ __html: htmlCode }}>
+            </div>
+            <div className='carousel-author'>By {author}</div>
             <button className="mainButton" onClick={e=>{
                             e.preventDefault();
                             dispatch(active(true));
@@ -26,4 +29,4 @@ function CardContainer (props){
     )
 }
 
-export default CardContainer
+export default CarouselContainer
