@@ -13,7 +13,7 @@ function Home(){
         <>
             <section className="home-container">
                 <article className="home-welcome">
-                    <h2 className="home-title">Welcome to MyComponents webpage</h2>
+                    <h2 className="home-title">Welcome to MyComponents</h2>
                     <p className="home-text">This web site will help you providing some components that you can use to build your desired webpage</p>
                 </article>
                 <article className="home-map">

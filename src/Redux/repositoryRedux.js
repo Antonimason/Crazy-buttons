@@ -11,6 +11,7 @@ export const buttonSelection = createSlice({
         loaderList: buttonList.loaders,
         carouselList: buttonList.carousel,
         cardList: buttonList.cards,
+        accordionList: buttonList.accordion,
         copied: false, // Initial state for copied property
         clipboard: false, // Initial state for clipboard property
     },

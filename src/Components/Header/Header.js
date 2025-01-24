@@ -34,7 +34,7 @@ function Header(){
                     <CiMenuBurger className="header-menu" onClick={()=>{showNavBar()}}/>
                     <ul className="header-nav">
                         <li className="header-nav-button" onClick={()=>{dispatch(display("Home")); showNavBar()}}>Home</li>
-                        <li className="header-nav-button" onClick={()=>{dispatch(display("Header")); showNavBar()}}>Navbar</li>
+                        {/*<li className="header-nav-button" onClick={()=>{dispatch(display("Header")); showNavBar()}}>Navbar</li>*/}
                         <li className="header-nav-button" onClick={()=>{dispatch(collapse("button"));collapseNavBar(".header-nav-sub")}}>
                             Button<span className="collapse-button">{isCollapseButton === false ? <LiaPlusSolid/> : <LiaMinusSolid/>}</span>
                             <ul className="header-nav-sub">

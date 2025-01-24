@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import './Modal.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateModalContent} from '../../Redux/modalRedux';
@@ -12,35 +12,44 @@ function Modal() {
     const code = buttonList.modal[0].modalCode[0]
     const code_2 = buttonList.modal[0].modalCode[1]
 
+    // Memorizar la función `showDynamicModal` para evitar recreaciones innecesarias
+    const showDynamicModal = useCallback((modalContent) => {
+        const modalRoot = document.querySelector('.modalShownContainer');
+        if (!modalRoot) {
+            console.error("No se encontró '.modalShownContainer' en el DOM.");
+            return;
+        }
+
+        // Eliminar el modal existente si está presente
+        let existingModal = document.getElementById('child');
+        if (existingModal) {
+            modalRoot.removeChild(existingModal);
+        }
+
+        // Crear y añadir el nuevo modal
+        const modalDiv = document.createElement('div');
+        modalDiv.setAttribute('id', 'child');
+        modalDiv.innerHTML = modalContent; // Asegúrate de que modalContent sea seguro
+        modalRoot.appendChild(modalDiv);
+    }, []);
+
     // Ejecuta la función showDynamicModal cada vez que el contenido del modal cambia
     useEffect(() => {
         if (modal) {
             showDynamicModal(modal);
         }
-    }, [modal,showDynamicModal]);
+        // Limpia el estado al desmontar
+        return () => {
+            dispatch(updateModalContent(false)); // Resetea el contenido del modal
+        };
+    }, [modal,showDynamicModal, dispatch]);
 
     const showModal = (modalId) =>{
+        // Forzar un "reinicio" del modal primero
+        dispatch(updateModalContent('')); // Limpiar el contenido
+        setTimeout(() => {
         dispatch(updateModalContent(buttonList.modal[0].modalCode[modalId].htmlCode))
-    }
-
-    const modalContainerCreation = (modalRoot,modalContent)=>{
-        const modalDiv = document.createElement('div');
-        modalDiv.setAttribute("id","child")
-        // Insertar el contenido del modal (asegúrate de que modalContent sea HTML válido)
-        modalDiv.innerHTML = modalContent;
-        // Agregar el modal al DOM
-        modalRoot.appendChild(modalDiv); 
-    }
-
-    function showDynamicModal(modalContent) {
-        const modalRoot = document.querySelector('.modalShownContainer');
-        const existingModal = document.getElementById('child')
-        if (modalRoot.hasChildNodes()) {
-            modalRoot.removeChild(existingModal)
-            modalContainerCreation(modalRoot,modalContent)
-        } else{
-            modalContainerCreation(modalRoot,modalContent)
-        }
+        }, 0);
     }
 
     return(
@@ -48,9 +57,8 @@ function Modal() {
             <div className="modalShownContainer"></div>
             <section className="modal-container">
                 <article className="modal-model model_1">
-                    <h3>Modal model : 1</h3>
-                    <div className="modal-model-try">   
-                        <p className="modal-text">This is a Modal box</p>
+                    <h3>Model 1</h3>
+                    <div className="modal-model-try">  
                         <button className="modal-button" onClick={()=>{
                             showModal(0)}}>Try Yourself</button>
                         <button className="modal-button" onClick={e=>{
@@ -64,27 +72,19 @@ function Modal() {
                     </div>
                 </article>
                 <article className="modal-model model_2">
-                    <h3>Modal model : 2</h3>
+                    <h3>Model 2</h3>
                     <div className="modal-model-try">   
-                        <p className="modal-text">This is a Modal box</p>
                         <button className="modal-button" onClick={()=>{
                             showModal(1)}}>Try Yourself</button>
                             <button className="modal-button" onClick={e=>{
-                        e.preventDefault();
-                        dispatch(active(true));
-                        dispatch(contentProvider({
-                            htmlCode:code_2.htmlCode,
-                            cssCode:code_2.cssCode,
-                            jsCode:false
-                            }))}}>Get Code</button>
-                    </div>
-                </article>
-                <article className="modal-model">
-                    <h3>Modal model : 3</h3>
-                    <div className="modal-model-try">   
-                        <p className="modal-text">This is a Modal box</p>
-                        <button className="modal-button" onClick={()=>{
-                            showModal(2)}}>Try Yourself</button>
+                                e.preventDefault();
+                                dispatch(active(true));
+                                dispatch(contentProvider({
+                                    htmlCode:code_2.htmlCode,
+                                    cssCode:code_2.cssCode,
+                                    jsCode:false
+                                    }))}}>
+                        Get Code</button>
                     </div>
                 </article>
             </section>

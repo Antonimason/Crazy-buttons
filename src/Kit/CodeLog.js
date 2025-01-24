@@ -32,7 +32,7 @@ function CodeLog(props) {
                             <button className="mainButton copyButton" onClick={(e)=>{dispatch(copy(Formater.formatHTMLCode(htmlCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
                             </div>
                             <pre><code className="language-css">
-                                {Formater.formatHTMLCode(htmlCode)};
+                                {Formater.formatHTMLCode(htmlCode)}
                             </code></pre>
                         </div>
                     )
@@ -43,7 +43,7 @@ function CodeLog(props) {
                             <button className="mainButton copyButton" onClick={(e)=>{dispatch(copy(Formater.formatCssCode(cssCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
                         </div>
                         <pre><code className="language-css">
-                            {Formater.formatCssCode(cssCode)};
+                            {Formater.formatCssCode(cssCode)}
                         </code></pre>
                     </div>)}
                     {languajeShown === "js" && (
@@ -52,9 +52,9 @@ function CodeLog(props) {
                                 <button className="mainButton copyButton" onClick={(e)=>{dispatch(copy(Formater.formatJavaScriptCode(jsCode)));dispatch(clipboards(true));setTimeout(()=>{dispatch(clipboards(false))},3000)}}>Copy</button>
                             </div>
                             <pre className="pre"><code className="language-css">
-                                {jsCode !== false ? Formater.formatJavaScriptCode(jsCode) : false};
+                                {jsCode !== false ? Formater.formatJavaScriptCode(jsCode) : false}
                             </code></pre>
-                    </div>
+                        </div>
                     )}
                 </div>
             </div>
