@@ -2,13 +2,14 @@
   margin-top: 6vh;
   padding: 20px;
   width: 100%;
-  min-height: 78.5vh;
+  min-height: 94vh;
   max-width: 100rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 1rem;
+  position:relative;
 }
 /*
 .modal-model{
@@ -61,7 +62,6 @@
     margin: 1.5rem auto;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 12px;
-    background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,8 +72,15 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
+  .modalShownContainer{
+    width: 100%;
+    height: 80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
   .modal-model:hover {
-    transform: translateY(-5px);
+    transform: translateY(-1px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
   
@@ -171,6 +178,6 @@
     }
   }
   
-.notification {position:absolute;bottom:4px;right:4px;padding: 5px;width:max-content;height:50px;border-radius:6px;background-color:#313e2c;color:#aaec8a;box-shadow: 0 1px 10px rgba(0,0,0,0.1);transform: translateY(30px);opacity:0;visibility: hidden; animation: fade-in 3s linear;} .notification_icon{height:26px;width:26px;margin-right: 4px;} .notification_body{display:flex; flex-direction: row; align-items: center; padding: 16px 8px;} .notification_progress{position:absolute; left:4px; bottom:4px; width: calc(100% - 8px); height: 3px; transform: scaleX(0); transform-origin: left; background: linear-gradient(to right, #313e2c, #aaec8a); border-radius: inherit; animation: progress 2.5s 0.3s linear;} @keyframes fade-in{5% {opacity: 1; visibility:visible;transform:translateY(0);}95%{opacity:1;transform:translateY(0);}} @keyframes progress {to{transform: scaleX(1);}}
+.notification {padding: 5px;width:max-content;height:50px;border-radius:6px;background-color:#313e2c;color:#aaec8a;box-shadow: 0 1px 10px rgba(0,0,0,0.1);transform: translateY(30px);opacity:0;visibility: hidden; animation: fade-in 3s linear;} .notification_icon{height:26px;width:26px;margin-right: 4px;} .notification_body{display:flex; flex-direction: row; align-items: center; padding: 16px 8px;} .notification_progress{position:absolute; left:4px; bottom:4px; width: calc(100% - 8px); height: 3px; transform: scaleX(0); transform-origin: left; background: linear-gradient(to right, #313e2c, #aaec8a); border-radius: inherit; animation: progress 2.5s 0.3s linear;} @keyframes fade-in{5% {opacity: 1; visibility:visible;transform:translateY(0);}95%{opacity:1;transform:translateY(0);}} @keyframes progress {to{transform: scaleX(1);}}
 
-.clipboard{padding: 0.7rem 1.2rem;width:max-content;border: 1px solid rgba(0,0,0,0.5);color: white;transform: translateY(30px);background: rgb(69, 70, 68);border-radius: 20px;position:absolute;bottom:4px;right:4px;z-index: 1;height: 50px;opacity:0;visibility: hidden;animation: fade-in 3s linear;}@keyframes fade-in{5% {opacity: 1; visibility:visible;transform:translateY(0);}95%{opacity:1;transform:translateY(0);}} @keyframes progress {to{transform: scaleX(1);}}
+.modal2{padding: 0.7rem 1.2rem;width:max-content;border: 1px solid rgba(0,0,0,0.5);color: white;transform: translateY(30px);background: rgb(69, 70, 68);border-radius: 20px;height: 50px;opacity:0;visibility: hidden;animation: fade-in 3s linear;}@keyframes fade-in{5% {opacity: 1; visibility:visible;transform:translateY(0);}95%{opacity:1;transform:translateY(0);}} @keyframes progress {to{transform: scaleX(1);}}

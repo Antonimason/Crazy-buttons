@@ -1,0 +1,41 @@
+/* Estilo para el modal */
+.modal-container-model {
+    width: 100%;
+    height: 70px;
+    margin: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* Estilo de la sección que muestra el autor */
+.modal-author {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Acción de centrar el modal en el artículo */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Animación y transición */
+.modal-container {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

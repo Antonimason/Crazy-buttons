@@ -3,6 +3,7 @@ import './Footer.css';
 import { SlSocialInstagram } from "react-icons/sl";
 import { FaLinkedinIn } from "react-icons/fa";
 import { VscGithubAlt } from "react-icons/vsc";
+import Yo from '../../Assets/yo.jpg'
 
 function Footer(){
     return(
@@ -20,7 +21,7 @@ function Footer(){
                     </div>
                 </div>
                 <div className="footer-logo">
-                    <img className="footer-picture" src="antonio.jpg" alt="Antonio Giambra"/>
+                    <img className="footer-picture" src={Yo} alt="Antonio Giambra"/>
                     <p className="footer-name">Antonio Giambra</p>
                 </div>
             </footer>
